@@ -722,7 +722,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
   .contact h2{font-size:clamp(1.8rem,4.4vw,2.6rem)}
 }
 
-@media (max-width:900px){.hero-art video{display:none}}
+
 
 @media (max-width:900px){
   :root{--sb:0px}
@@ -731,7 +731,9 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
     overflow-x:auto;scrollbar-width:none}
   .sidebar::-webkit-scrollbar{display:none}
   .sb-label,.sb-foot,.sb-link svg{display:none}
-  .brand{padding:0 .7rem 0 0}
+  .brand{display:flex;align-items:center;gap:.55rem;padding:0 .8rem 0 0;flex:none}
+  .brand-txt strong .nl,.brand-txt strong br{display:none}
+  .brand-txt strong{white-space:nowrap}
   .brand-txt span{display:none}
   .sb-link{white-space:nowrap;padding:.45rem .7rem;font-size:.8rem}
   .shell{margin-left:0}
@@ -741,7 +743,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
   .contact h2{max-width:16ch}
   .note{max-width:none}
   .gantt{--lbl:130px}
-  .hero-art{opacity:.18}
+  .hero-art{opacity:.5}
   .topbar-tools{width:100%;justify-content:space-between;--barh:auto}
   .topbar-tools>*{height:auto}
   .statbar,.switch{height:auto}
@@ -764,7 +766,9 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
 }
 
 @media (max-width:700px){
-  .seeking{font-size:.56rem;letter-spacing:.08em;padding:.38rem .6rem}
+  .seeking{font-size:.58rem;letter-spacing:.06em;padding:.4rem .65rem;line-height:1.35}
+  .eyebrow{font-size:.6rem;letter-spacing:.07em;line-height:1.5}
+  .statbar .stat:nth-child(n+3){display:none}
   .hero{padding:22px 18px!important}
   .hero h1{font-size:clamp(1.6rem,6.6vw,2.1rem)}
   .c3,.c4{grid-column:span 12}
@@ -931,7 +935,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
       <img class="logo-dark" width="120" height="120" fetchpriority="high" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_120/v1786371512/Logo-hell.png" alt="Yauheni Vesialukha">
       <img class="logo-light" width="120" height="120" loading="lazy" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_120/v1786371512/Logo.png" alt="" aria-hidden="true">
     </span>
-    <span class="brand-txt"><strong>Yauheni<br>Vesialukha</strong><span>Operations · Analytics</span></span>
+    <span class="brand-txt"><strong>Yauheni <br class="nl">Vesialukha</strong><span>Operations · Analytics</span></span>
   </a>
 
   <p class="sb-label">Ansichten</p>
