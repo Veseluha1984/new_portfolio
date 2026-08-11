@@ -6,8 +6,7 @@
 <title>Yauheni Vesialukha — Business Operations &amp; Data Analyst</title>
 <meta name="description" content="Business- und Data Analyst im Raum Zürich. SQL, Power BI, Tableau, SAP MM/CO — über 20 Jahre Verantwortung für Prozesse und Kennzahlen.">
 <meta name="author" content="Yauheni Vesialukha">
-<meta name="theme-color" content="#05080C" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#F4F6F9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#05080C">
 <link rel="canonical" href="https://yauhenivesialukha.netlify.app/">
 <link rel="alternate" hreflang="de" href="https://yauhenivesialukha.netlify.app/">
 <link rel="alternate" hreflang="en" href="https://yauhenivesialukha.netlify.app/en.html">
@@ -877,7 +876,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
   .js .cmp-bar{height:var(--h)}
 }
 </style>
-<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}else if(matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light')}}catch(e){}</script>
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Yauheni Vesialukha",
 "jobTitle":"Business Operations & Data Analyst","seeks":{"@type":"Demand","name":"Festanstellung als Business- / Data Analyst, Raum Zürich und Deutschschweiz, 80-100 %, Eintritt nach Absprache"},"email":"mailto:yauhenivesialukha@icloud.com",
@@ -1515,11 +1514,13 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
   function store(v){ try{ localStorage.setItem('theme', v); }catch(e){} }
   function read(){ try{ return localStorage.getItem('theme'); }catch(e){ return null; } }
 
+  // Standard ist Dunkel; die Systemeinstellung wird bewusst nicht ausgewertet.
+  // Nur eine ausdrueckliche Wahl des Besuchers wird uebernommen.
   var saved = read();
   if(saved === 'light' || saved === 'dark'){
     root.setAttribute('data-theme', saved);
-  } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
-    root.setAttribute('data-theme', 'light');
+  } else {
+    root.setAttribute('data-theme', 'dark');
   }
 
   var btn = document.querySelectorAll('[data-theme-toggle]');
