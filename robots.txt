@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yauhenivesialukha.netlify.app/sitemap.xml

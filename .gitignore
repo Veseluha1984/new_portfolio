@@ -1,0 +1,20 @@
+# Betriebssystem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editoren
+.vscode/
+.idea/
+*.swp
+*~
+
+# Werkzeuge
+node_modules/
+.netlify/
+.cache/
+
+# Zwischenstände
+*.bak
+*.tmp
+*.orig

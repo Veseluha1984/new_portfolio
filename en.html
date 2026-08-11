@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yauheni Vesialukha — Business Operations &amp; Data Analyst</title>
+<meta name="description" content="Business and data analyst in Zurich, Switzerland. SQL, Power BI, Tableau, SAP MM/CO — over 20 years of ownership for processes and KPIs.">
+<meta name="author" content="Yauheni Vesialukha">
+<meta name="theme-color" content="#05080C" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F6F9" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://yauhenivesialukha.netlify.app/en.html">
+<link rel="alternate" hreflang="de" href="https://yauhenivesialukha.netlify.app/">
+<link rel="alternate" hreflang="en" href="https://yauhenivesialukha.netlify.app/en.html">
+<link rel="alternate" hreflang="x-default" href="https://yauhenivesialukha.netlify.app/">
+
+<!-- Vorschau in LinkedIn, WhatsApp, Slack, X -->
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_CH">
+<meta property="og:site_name" content="Yauheni Vesialukha">
+<meta property="og:title" content="Yauheni Vesialukha — Business Operations &amp; Data Analyst">
+<meta property="og:description" content="Business / data analyst, Zurich and German-speaking Switzerland. over 20 years of ownership for processes, inventory and budgets — today with SQL, Power BI and Tableau.">
+<meta property="og:url" content="https://yauhenivesialukha.netlify.app/en.html">
+<meta property="og:image" content="https://yauhenivesialukha.netlify.app/og-image-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Portfolio-Dashboard von Yauheni Vesialukha">
+<meta property="profile:first_name" content="Yauheni">
+<meta property="profile:last_name" content="Vesialukha">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yauheni Vesialukha — Business Operations &amp; Data Analyst">
+<meta name="twitter:description" content="Business / data analyst, Zurich and German-speaking Switzerland. over 20 years of ownership for processes, inventory and budgets — today with SQL, Power BI and Tableau.">
+<meta name="twitter:image" content="https://yauhenivesialukha.netlify.app/og-image-en.png">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   1. TOKENS
+   ============================================================ */
+:root{
+  --ink:       #05080C;
+  --ink-2:     #0A0F16;
+  --panel:     linear-gradient(158deg, var(--t7), var(--t2));
+  --panel-hi:  linear-gradient(158deg, var(--t14), var(--t4));
+  --line:      var(--t14);
+  --line-soft: var(--t7);
+  --blur:      blur(22px) saturate(155%);
+
+  --text:      #E9F0F7;
+  --text-2:    #A6B4C4;
+  --text-3:    #6B7A8C;
+
+  --cyan:      #5AD1E6;
+  --amber:     #F0873C;
+  --violet:    #8E93F0;
+  --green:     #63C793;
+
+  --display:   "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body:      "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:      "JetBrains Mono", ui-monospace, monospace;
+
+  --sb:        236px;
+  --gap:       14px;
+  --r:         12px;
+
+  /* Bewegung: eine Kurve, drei Dauern */
+  --ease:      cubic-bezier(.22,.61,.36,1);
+  --dur-fast:  .18s;
+  --dur:       .32s;
+  --dur-slow:  .85s;
+  --dur-data:  1.15s;
+
+  /* Tint-Stufen: im hellen Theme werden sie invertiert */
+  --t1:  rgba(255,255,255,.014);  --t2:  rgba(255,255,255,.022);
+  --t3:  rgba(255,255,255,.032);  --t4:  rgba(255,255,255,.045);
+  --t5:  rgba(255,255,255,.055);  --t6:  rgba(255,255,255,.062);
+  --t7:  rgba(255,255,255,.075);  --t9:  rgba(255,255,255,.09);
+  --t10: rgba(255,255,255,.10);   --t14: rgba(255,255,255,.15);
+  --t17: rgba(255,255,255,.17);   --t22: rgba(255,255,255,.24);
+  --t45: rgba(255,255,255,.45);
+  --veil: rgba(5,8,12,.72);
+  --scrim-a: rgba(5,8,12,.18); --scrim-b: rgba(5,8,12,.8);
+  --shadow: none;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ink);color:var(--text);
+  font-family:var(--body);font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:4px}
+svg{display:block}
+
+/* ambient + grid backdrop so the glass has something to refract */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+.bg::before,.bg::after{content:"";position:absolute;border-radius:50%;filter:blur(130px)}
+.bg::before{width:55vw;height:55vw;top:-16vw;right:-10vw;background:rgba(90,209,230,.15)}
+.bg::after{width:45vw;height:45vw;bottom:-14vw;left:8vw;background:rgba(240,135,60,.10)}
+.bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(var(--t3) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--t3) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 15%,transparent 78%);
+          mask-image:radial-gradient(ellipse at 50% 0%,#000 15%,transparent 78%);}
+
+/* ============================================================
+   2. TYPE
+   ============================================================ */
+.display{font-family:var(--display);font-weight:600;
+  line-height:1.04;letter-spacing:-.018em;margin:0}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-3);margin:0}
+.num{font-family:var(--display);font-weight:700;
+  letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
+.mono{font-family:var(--mono)}
+.up{color:var(--cyan)} .down{color:var(--amber)}
+
+/* ============================================================
+   3. SIDEBAR
+   ============================================================ */
+.skip{position:absolute;left:-9999px;top:0;z-index:100;
+  padding:.7rem 1rem;border-radius:0 0 9px 0;background:var(--text);color:var(--ink);
+  font-size:.85rem;font-weight:600}
+.skip:focus{left:0}
+.sidebar{
+  position:fixed;top:0;left:0;bottom:0;width:var(--sb);z-index:50;
+  display:flex;flex-direction:column;gap:.35rem;
+  padding:20px 14px;
+  background:linear-gradient(180deg,var(--t5),var(--t1));
+  border-right:1px solid var(--line);
+  backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+}
+.brand{display:grid;grid-template-columns:auto 1fr;gap:.1rem .7rem;
+  align-items:center;padding:.35rem .3rem 1.4rem;min-width:0}
+.brand-mark{width:46px;height:46px;border-radius:10px;flex:none;
+  display:block;overflow:hidden;background:none}
+.brand-mark img{width:100%;height:100%;object-fit:contain;display:block}
+.logo-light{display:none}
+:root[data-theme="light"] .logo-light{display:block}
+:root[data-theme="light"] .logo-dark{display:none}
+.brand-txt{min-width:0}
+.brand-txt strong{display:block;font-family:var(--display);
+  font-weight:700;font-size:1.12rem;letter-spacing:-.025em;line-height:1.06}
+.brand{transition:transform var(--dur) var(--ease)}
+.brand:hover{transform:translateY(-1px)}
+.brand-txt > span{display:block;font-family:var(--mono);font-size:.55rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--text-3);margin-top:.4rem;white-space:nowrap}
+.sb-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-3);padding:.8rem .6rem .4rem}
+.sb-link{position:relative;display:flex;align-items:center;gap:.7rem;padding:.6rem .6rem;border-radius:8px;
+  font-size:.93rem;color:var(--text-2);border:1px solid transparent;
+  transition:background var(--dur-fast) ease,color var(--dur-fast) ease,border-color var(--dur-fast) ease}
+.sb-link:hover{background:var(--t5);color:var(--text)}
+.sb-link svg{width:15px;height:15px;flex:none;fill:currentColor;opacity:.72;transition:opacity var(--dur-fast) ease,color var(--dur-fast) ease}
+.sb-link svg.ic{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.sb-link:hover svg{opacity:1}
+.sb-link--brand{justify-content:flex-start}
+.sb-link--brand em{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:.62rem;
+  color:var(--text-3);transition:transform var(--dur-fast) var(--ease),color var(--dur-fast) ease}
+.sb-link--brand:hover svg{opacity:1}
+.sb-link--brand:hover em{color:var(--cyan);transform:translate(2px,-2px)}
+.sb-link.active{background:var(--panel-hi);border-color:var(--line);color:var(--text)}
+.sb-link.active svg{opacity:1;color:var(--cyan)}
+.sb-link::before{content:"";position:absolute;left:0;top:50%;width:3px;height:0;
+  border-radius:0 2px 2px 0;background:var(--cyan);transform:translateY(-50%);
+  transition:height var(--dur) var(--ease);box-shadow:0 0 10px rgba(90,209,230,.55)}
+.sb-link.active::before{height:58%}
+.sb-foot{margin-top:auto;display:flex;flex-direction:column;gap:9px}
+.led--sm{width:7px;height:7px}
+.dd-live{display:inline-flex;align-items:center;gap:.45rem;justify-content:flex-end}
+.status{display:flex;align-items:center;gap:.55rem;padding:.7rem .75rem;border-radius:9px;
+  background:var(--panel);border:1px solid var(--line);
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.led{position:relative;width:8px;height:8px;border-radius:50%;flex:none;
+  background:var(--green);box-shadow:0 0 9px rgba(99,199,147,.6)}
+.led::after{content:"";position:absolute;inset:0;border-radius:50%;
+  border:1.5px solid var(--green);animation:ripple 2.4s var(--ease) infinite}
+.led::before{content:"";position:absolute;inset:0;border-radius:50%;
+  border:1.5px solid var(--green);animation:ripple 2.4s var(--ease) infinite 1.2s}
+@keyframes ripple{
+  0%  {transform:scale(1);opacity:.7}
+  75% {transform:scale(3.4);opacity:0}
+  100%{transform:scale(3.4);opacity:0}
+}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:44px;padding:0 1.15rem;border-radius:9px;
+  font-family:var(--body);font-size:.88rem;font-weight:600;letter-spacing:.005em;
+  text-transform:none;white-space:nowrap;
+  background:var(--panel);border:1px solid var(--line);color:var(--text);
+  backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  transition:background var(--dur-fast) ease,border-color var(--dur-fast) ease,transform var(--dur-fast) ease}
+.btn:hover{background:var(--panel-hi);border-color:var(--t22);transform:translateY(-1px)}
+.btn--solid{background:var(--text);color:var(--ink);border-color:transparent;font-weight:600}
+.btn--solid:hover{background:#fff;color:var(--ink)}
+
+/* ============================================================
+   4. SHELL / TOPBAR
+   ============================================================ */
+.shell{position:relative;z-index:2;margin-left:var(--sb);padding:0 var(--gap) 40px}
+.topbar{
+  position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;flex-wrap:wrap;padding:13px 4px;margin-bottom:var(--gap);
+  background:var(--veil);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border-bottom:1px solid var(--line-soft);
+}
+.crumb{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3)}
+.crumb b{color:var(--text);font-weight:500}
+.topbar-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;--barh:52px}
+.topbar-tools>*{height:var(--barh);box-sizing:border-box}
+.topbar-tools .btn{display:inline-flex;align-items:center;padding:0 1.05rem}
+
+/* filter/stat bar — jede Zelle: Label oben, Wert unten */
+.statbar{display:flex;align-items:stretch;height:var(--barh);border:1px solid var(--line);border-radius:9px;
+  background:var(--t3);overflow:hidden}
+.stat{display:flex;flex-direction:column;gap:.14rem;justify-content:center;
+  padding:.38rem .85rem;border-left:1px solid var(--line-soft);white-space:nowrap}
+.stat:first-child{border-left:0}
+.stat dt{font-family:var(--mono);font-size:.55rem;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--text-3)}
+.stat dd{margin:0;display:flex;align-items:baseline;gap:.3rem;
+  font-family:var(--mono);font-size:.8rem;font-weight:700;
+  letter-spacing:.01em;color:var(--text);font-variant-numeric:tabular-nums}
+.stat .num-lg{font-family:var(--display);font-size:1.25rem;font-weight:700;
+  letter-spacing:-.025em;line-height:1;color:var(--cyan)}
+.stat .unit{font-weight:500;font-size:.76rem;color:var(--text-2)}
+.stat dd em{font-style:normal;font-weight:400;color:var(--text-3);font-size:.68rem}
+.stat--live dd{display:flex;align-items:center;gap:.45rem;color:var(--cyan)}
+.stat--accent dd{color:var(--cyan)}
+.stat dd.is-typing::after{content:"";display:inline-block;width:.5em;height:1em;
+  margin-left:.08em;vertical-align:-.12em;background:var(--cyan);
+  animation:caret .7s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+
+/* ============================================================
+   5. GRID + PANELS
+   ============================================================ */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-bottom:var(--gap)}
+.c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}
+.c6{grid-column:span 6}.c7{grid-column:span 7}.c8{grid-column:span 8}
+.c9{grid-column:span 9}.c12{grid-column:span 12}
+
+.panel{
+  display:flex;flex-direction:column;overflow:hidden;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  transition:border-color var(--dur) ease,background var(--dur) ease;
+}
+.panel:hover{border-color:var(--t17)}
+.ph{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap;
+  padding:14px 16px;border-bottom:1px solid var(--line-soft)}
+.ph h2,.ph h3{margin:0;font-size:1.05rem;font-weight:700;letter-spacing:-.015em;color:var(--text)}
+.ph .meta{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-3);white-space:nowrap}
+.pb{padding:16px;flex:1;display:flex;flex-direction:column;gap:.9rem}
+.pb--flush{padding:0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* section heading row */
+.sec{display:flex;align-items:baseline;gap:1.15rem;
+  padding:clamp(30px,4.2vh,52px) 4px 8px;flex-wrap:wrap}
+.sec h2{order:1}
+.sec p{order:2}
+.sec .rule{order:3}
+.sec h2{font-family:var(--display);font-weight:700;
+  font-size:clamp(1.35rem,2.1vw,1.85rem);letter-spacing:-.022em;line-height:1.1;
+  margin:0;display:flex;align-items:center;gap:.65rem}
+.sec h2::before{content:"";width:4px;height:1em;border-radius:2px;flex:none;
+  background:linear-gradient(180deg,var(--cyan),rgba(90,209,230,.25))}
+.sec .rule{flex:1;height:1px;background:var(--line-soft);min-width:60px}
+.sec p{margin:0;font-size:.88rem;color:var(--text-3);max-width:52ch}
+
+/* ============================================================
+   6. HERO PANEL
+   ============================================================ */
+.hero{position:relative;min-height:330px;justify-content:center;gap:1.4rem;padding:clamp(22px,3vw,40px)}
+.hero-art{position:absolute;inset:0;opacity:.62;pointer-events:none;isolation:isolate;
+  -webkit-mask-image:linear-gradient(90deg,transparent 28%,#000 100%);
+          mask-image:linear-gradient(90deg,transparent 28%,#000 100%)}
+.hero-art img,.hero-art video{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;filter:brightness(.86) contrast(1.06) saturate(.72)}
+.hero-art video{z-index:1}
+/* Auf schmalen Geraeten kein Video laden — dort ist die Flaeche ohnehin fast unsichtbar */
+
+
+.hero-art::after{content:"";position:absolute;inset:0;z-index:2;opacity:.5;
+  background:linear-gradient(152deg,rgba(90,209,230,.6),rgba(46,86,116,.45) 55%,rgba(240,135,60,.4));
+  mix-blend-mode:color}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(100deg,var(--ink) 22%,rgba(5,8,12,.55) 55%,transparent 82%)}
+:root[data-theme="light"] .hero::before{
+  background:linear-gradient(100deg,var(--ink) 22%,rgba(244,246,249,.6) 55%,transparent 82%)}
+.hero-in{position:relative;z-index:2;display:flex;flex-direction:column;gap:1.2rem}
+.hero h1{font-size:clamp(1.9rem,3.4vw,3.15rem);max-width:19ch}
+.hero h1 em{font-style:normal;
+  background:linear-gradient(92deg,var(--cyan),#a8ecf5 50%,var(--amber));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin:0;max-width:54ch;color:var(--text-2);font-size:.98rem}
+.hero-cta{display:flex;gap:9px;flex-wrap:wrap}
+
+/* portrait */
+.portrait{position:relative;aspect-ratio:4/3;overflow:hidden;isolation:isolate;
+  border-bottom:1px solid var(--line-soft);
+  background:linear-gradient(150deg,#12202E,#0A121A 55%,#1A1410)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 10%;
+  filter:brightness(.88) contrast(1.06) saturate(.7);transition:filter var(--dur) ease,transform var(--dur-data) var(--ease)}
+.portrait::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(152deg,rgba(90,209,230,.5),rgba(46,86,116,.4) 55%,rgba(240,135,60,.35));
+  mix-blend-mode:color;opacity:.4;transition:opacity var(--dur) ease}
+.portrait:hover img{filter:none;transform:scale(1.03)}
+.portrait:hover::after{opacity:.1}
+.portrait::before{content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(180deg,rgba(5,8,12,0) 55%,var(--veil))}
+.portrait-cap{position:absolute;left:14px;bottom:12px;z-index:3}
+.portrait-cap b{display:block;font-family:var(--display);font-weight:600;
+  font-size:1rem;letter-spacing:-.01em}
+.portrait-cap span{font-family:var(--mono);font-size:.58rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--text-3)}
+.portrait.is-empty img{display:none}
+.portrait.is-empty .ph-fallback{display:grid}
+.ph-fallback{display:none;position:absolute;inset:0;z-index:1;place-items:center;align-content:center;gap:.6rem;text-align:center}
+.ph-fallback b{font-family:var(--display);font-weight:700;font-size:2.4rem;
+  letter-spacing:-.03em;
+  background:linear-gradient(140deg,var(--cyan),#9fe7f2 60%,var(--amber));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.ph-fallback span{font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-3)}
+
+/* profile facts */
+.facts{display:flex;flex-direction:column;gap:0}
+.fact{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  padding:.72rem 0;border-bottom:1px solid var(--line-soft)}
+.fact:last-child{border-bottom:0}
+.fact dt{font-family:var(--mono);font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.fact dd{margin:0;font-size:.92rem;text-align:right;font-weight:500}
+
+/* ============================================================
+   7. KPI TILES
+   ============================================================ */
+.kpi .pb{gap:.75rem}
+.kpi-v{font-size:clamp(1.9rem,3vw,2.6rem)}
+.kpi-l{font-size:.8rem;color:var(--text-2);margin:0}
+.meter{height:3px;border-radius:2px;background:var(--t7);overflow:hidden}
+.meter i{display:block;height:100%;border-radius:2px;width:var(--w);transition:width var(--dur-data) var(--ease)}
+.js .meter i{width:0}
+.js .in .meter i{width:var(--w)}
+.kpi-note{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+
+/* ============================================================
+   8. CHARTS
+   ============================================================ */
+.axis{font-family:var(--mono);font-size:9px;fill:var(--text-3);letter-spacing:.08em}
+.gridline{stroke:var(--t7);stroke-width:1}
+.val{font-family:var(--mono);font-size:11px;font-weight:700;fill:var(--text)}
+
+/* funnel */
+.funnel{display:flex;flex-direction:column;gap:.75rem}
+.fn-row{display:grid;grid-template-columns:1fr auto;gap:.5rem .9rem;align-items:center}
+.fn-bar{grid-column:1/-1;height:34px;border-radius:6px;position:relative;overflow:hidden;
+  background:var(--t4);border:1px solid var(--line-soft)}
+.fn-bar i{position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:5px;
+  transition:width var(--dur-data) var(--ease)}
+.js .fn-bar i{width:0}
+.js .in .fn-bar i{width:var(--w)}
+.fn-name{font-size:.84rem;color:var(--text-2)}
+.fn-val{font-family:var(--mono);font-size:.82rem;font-weight:700}
+.fn-step{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.62rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);padding-left:.1rem}
+
+/* Leistungen */
+.svc-list{display:flex;flex-direction:column}
+.svc{padding:.85rem 16px;border-bottom:1px solid var(--line-soft);
+  border-left:2px solid transparent;transition:border-color var(--dur-fast) ease,background var(--dur-fast) ease}
+.svc:last-child{border-bottom:0}
+.svc:hover{border-left-color:var(--cyan);background:var(--t3)}
+.svc b{display:block;font-size:.94rem;font-weight:600;margin-bottom:.22rem}
+.svc span{font-size:.88rem;color:var(--text-3);line-height:1.45}
+
+/* compare bars (A/B) */
+.cmp{display:flex;gap:1.4rem;align-items:flex-end;height:150px;padding-top:.4rem}
+.cmp-col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:.55rem;height:100%}
+.cmp-bar{border-radius:6px 6px 2px 2px;height:var(--h);transition:height var(--dur-data) var(--ease)}
+.js .cmp-bar{height:0}
+.js .in .cmp-bar{height:var(--h)}
+.cmp-col b{font-family:var(--display);font-weight:700;font-size:1.4rem}
+.cmp-col span{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+
+/* ============================================================
+   9. PROJECT CARDS
+   ============================================================ */
+.shot{position:relative;aspect-ratio:3/2;overflow:hidden;isolation:isolate;
+  background:linear-gradient(135deg,#0E1824,#080D13 60%,#101A14);border-bottom:1px solid var(--line-soft)}
+/* helle Screenshots werden auf die Palette getont, damit sie im dunklen Raster nicht ausbrechen */
+.shot img{width:100%;height:100%;object-fit:cover;opacity:.86;
+  filter:brightness(.74) contrast(1.08) saturate(.6);
+  transition:transform var(--dur-data) var(--ease),opacity var(--dur) ease,filter var(--dur) ease}
+.shot::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(152deg,rgba(90,209,230,.55),rgba(46,86,116,.45) 52%,rgba(240,135,60,.42));
+  mix-blend-mode:color;transition:opacity var(--dur) ease;opacity:.72}
+.pcard:hover .shot img{transform:scale(1.05);opacity:1;filter:brightness(.82) contrast(1.06) saturate(.8)}
+.pcard:hover .shot::after{opacity:.45}
+.shot.is-empty img{display:none}
+.shot.is-empty::after{content:"Screenshot folgt";display:grid;place-items:center;
+  background:none;mix-blend-mode:normal;opacity:1;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-3)}
+.shot::before{content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(180deg,rgba(5,8,12,.18) 40%,rgba(5,8,12,.8))}
+.tagrow{position:absolute;left:10px;bottom:10px;z-index:3;display:flex;gap:5px;flex-wrap:wrap}
+.tag--tool{display:inline-flex;align-items:center;gap:.4rem}
+.tag--tool::before{content:"";width:5px;height:5px;border-radius:50%;flex:none;
+  background:var(--cyan);box-shadow:0 0 6px rgba(90,209,230,.8)}
+.tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.11em;text-transform:uppercase;
+  padding:.26rem .48rem;border-radius:5px;color:var(--text);
+  background:rgba(10,15,22,.62);border:1px solid var(--line);backdrop-filter:blur(8px)}
+.pcard{transition:transform var(--dur) var(--ease),border-color var(--dur) ease,background var(--dur) ease}
+
+.pcard:hover{transform:translateY(-3px);background:var(--panel-hi);border-color:var(--t22)}
+.pcard h3{font-family:var(--display);font-weight:700;font-size:1.12rem;
+  letter-spacing:-.015em;margin:0;line-height:1.2}
+.pcard p{margin:0;font-size:.92rem;color:var(--text-2);line-height:1.55}
+.finding{margin:auto 0 0;padding-top:.85rem;border-top:1px solid var(--line-soft);
+  font-size:.9rem;line-height:1.5;color:var(--text-2)}
+.finding span{display:block;font-family:var(--mono);font-size:.57rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-3);margin-bottom:.35rem}
+.open{font-family:var(--body);font-size:.85rem;font-weight:600;letter-spacing:.005em;
+  color:var(--cyan);display:flex;align-items:center;gap:.4rem}
+.open i{font-style:normal;transition:transform var(--dur) var(--ease)}
+.pcard:hover .open i{transform:translate(3px,-3px)}
+
+/* ============================================================
+   10. GANTT
+   ============================================================ */
+.gantt{padding:16px}
+.gt-scale{position:relative;height:20px;margin-left:calc(var(--lbl) + .9rem);margin-bottom:.6rem}
+.gt-scale span{position:absolute;top:0;transform:translateX(-50%);
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--text-3)}
+.gt-row{display:grid;grid-template-columns:var(--lbl) 1fr;gap:.9rem;align-items:center;
+  padding:.42rem 0;border-radius:6px;transition:background var(--dur-fast) ease}
+.gt-row:hover{background:var(--t3)}
+.gt-lbl{min-width:0}
+.gt-lbl b{display:block;font-size:.88rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gt-lbl span{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;color:var(--text-3)}
+.gt-scale span::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:7px;
+  background:var(--line)}
+.gt-scale{position:relative;height:26px;border-bottom:1px solid var(--line);margin-left:calc(var(--lbl) + .9rem)}
+.gt-today{position:absolute;z-index:2;width:1px;pointer-events:none;
+  top:42px;bottom:16px;
+  left:calc(16px + var(--lbl) + .9rem + (100% - 32px - var(--lbl) - .9rem) * .983);
+  background:linear-gradient(180deg,rgba(90,209,230,.75),rgba(90,209,230,.10))}
+.gt-today::before{content:attr(data-label);position:absolute;top:-20px;left:50%;
+  transform:translateX(-50%);font-family:var(--mono);font-size:.54rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--cyan);white-space:nowrap}
+.gantt{position:relative}
+.gt-scale .gt-first{transform:translateX(0)}
+.gt-scale .gt-first::after{left:0}
+.gt-track{position:relative;height:24px;border-radius:5px;background:var(--t2)}
+.gt-track::before{content:"";position:absolute;inset:0;border-radius:5px;
+  background-image:repeating-linear-gradient(90deg,var(--t5) 0 1px,transparent 1px 16.6667%)}
+.gt-bar{position:absolute;top:3px;bottom:3px;border-radius:4px;min-width:6px;
+  transform-origin:bottom;transition:transform .6s var(--ease),opacity .35s ease;
+  display:flex;align-items:center;padding:0 .5rem;overflow:hidden}
+.js .gt-bar{transform:scaleY(0);opacity:0}
+.js .in .gt-bar{transform:scaleY(1);opacity:1}
+.js .rv.hold .gt-bar{transform:scaleY(0);opacity:0}
+.gt-bar em{font-style:normal;font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;
+  color:rgba(5,8,12,.75);font-weight:700;white-space:nowrap}
+.gt-row--break{padding:.15rem 0}
+.gt-row--break:hover{background:none}
+.gt-row--break .gt-lbl b{font-weight:400;font-size:.78rem;color:var(--text-3)}
+.gt-row--break .gt-lbl span{opacity:.75}
+.gt-row--break .gt-track{height:15px;background:none}
+.gt-row--break .gt-track::before{background-image:none;border-radius:0;
+  top:50%;bottom:auto;height:0;border-top:1px dashed var(--t14)}
+.gt-row--break .gt-bar{top:0;bottom:0;width:2px;min-width:2px;border-radius:1px;
+  background:var(--t45);transform:none;padding:0}
+.legend{display:flex;gap:1.1rem;flex-wrap:wrap;padding:14px 16px;border-top:1px solid var(--line-soft)}
+.legend span{display:flex;align-items:center;gap:.45rem;font-family:var(--mono);font-size:.6rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.legend i{width:9px;height:9px;border-radius:2px}
+
+/* Kontextpanel zur Laufbahn */
+.note{padding:clamp(22px,2.8vw,38px)}
+.note-lead{font-family:var(--display);font-weight:600;
+  font-size:clamp(1.1rem,1.75vw,1.6rem);line-height:1.22;letter-spacing:-.015em;
+  color:var(--text);margin:0 0 1.5rem;max-width:none}
+.note-cols{display:flex;flex-direction:column;gap:1.05rem}
+.note-cols p{margin:0;font-size:1rem;line-height:1.62;color:var(--text-2)}
+.note-cols p strong{color:var(--text);font-weight:600}
+
+/* ============================================================
+   11. TABLE
+   ============================================================ */
+table{width:100%;min-width:440px;border-collapse:collapse}
+th,td{text-align:left;padding:.78rem 16px;font-size:.9rem;border-bottom:1px solid var(--line-soft)}
+th{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-3);font-weight:500;background:var(--t2)}
+tbody tr{transition:background var(--dur-fast) ease}
+tbody tr:hover{background:var(--t3)}
+tbody tr:last-child td{border-bottom:0}
+td.when{font-family:var(--mono);font-size:.74rem;color:var(--text-3);white-space:nowrap}
+td small{display:block;color:var(--text-3);font-size:.76rem}
+.badge{display:inline-flex;align-items:center;gap:.35rem;padding:.22rem .5rem;border-radius:5px;
+  font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--line);color:var(--text-2);background:var(--t3)}
+.badge.ok{color:var(--green);border-color:rgba(99,199,147,.35)}
+
+/* ============================================================
+   12. CONTACT + FOOT
+   ============================================================ */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,420px);
+  gap:clamp(24px,4vw,68px);align-items:center;padding:clamp(26px,3.4vw,48px)}
+.contact h2{font-size:clamp(1.9rem,4.2vw,4rem);margin-bottom:1.2rem;max-width:none}
+.contact p{margin:0;color:var(--text-2);max-width:64ch;font-size:1rem;line-height:1.6}
+.cinfo{display:flex;flex-direction:column;gap:8px}
+.crow{display:flex;align-items:baseline;justify-content:space-between;gap:1.2rem;
+  padding:.8rem 1.05rem;border-radius:9px;
+  background:var(--t3);border:1px solid var(--line);
+  transition:background var(--dur-fast) ease,border-color var(--dur-fast) ease,transform var(--dur-fast) ease}
+.crow:hover{background:var(--panel-hi);border-color:var(--t22);transform:translateX(3px)}
+.ck{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-3);flex:none}
+.cv{font-size:.88rem;font-weight:600;text-align:right;word-break:break-word}
+.scr{display:inline-block}
+.cv i{font-style:normal;font-family:var(--mono);font-size:.72rem;color:var(--text-3);
+  display:inline-block;transition:transform var(--dur-fast) var(--ease),color var(--dur-fast) ease}
+.crow:hover .cv i{color:var(--cyan);transform:translate(2px,-2px)}
+[data-magnet]{transition:transform .22s var(--ease),background var(--dur-fast) ease,border-color var(--dur-fast) ease;will-change:transform}
+[data-magnet]:hover{transform:translate(0,0)}
+.crow--cta{background:var(--text);border-color:transparent}
+.crow--cta .ck{color:rgba(5,8,12,.55)}
+.crow--cta .cv{color:var(--ink);font-weight:600}
+.crow--cta .cv i{color:rgba(5,8,12,.6);transform:none}
+.crow--cta:hover{background:#fff;border-color:transparent}
+.crow--cta:hover .cv i{color:var(--ink);transform:translateY(2px)}
+.statusbar{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  padding:12px 16px;margin-top:var(--gap);border-radius:var(--r);
+  background:var(--panel);border:1px solid var(--line);
+  backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.11em;text-transform:uppercase;color:var(--text-3)}
+
+/* --- Statusplaketten treten nacheinander ein --- */
+.js .rv .badge{opacity:0;transform:scale(.88) translateY(4px);
+  transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js .rv.in .badge{opacity:1;transform:none}
+.js .rv.in tr:nth-child(1) .badge{transition-delay:.30s}
+.js .rv.in tr:nth-child(2) .badge{transition-delay:.44s}
+.js .rv.in tr:nth-child(3) .badge{transition-delay:.58s}
+.js .rv.in tr:nth-child(4) .badge{transition-delay:.72s}
+.js .rv.in tr:nth-child(5) .badge{transition-delay:.86s}
+.js .rv.in tr:nth-child(6) .badge{transition-delay:1.00s}
+
+/* --- Schlussfrage: aufsteigender Text mit auslaufender Linie --- */
+.contact h2{position:relative;padding-bottom:.55rem}
+.contact h2::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;
+  border-radius:2px;background:linear-gradient(90deg,var(--cyan),rgba(90,209,230,0));
+  transition:width 1.4s var(--ease) 1.05s}
+.contact h2 .w{display:inline-block}
+.js .contact h2 .w{opacity:0;transform:translateY(26px);filter:blur(4px);
+  transition:opacity .8s var(--ease),transform .8s var(--ease),filter .8s var(--ease);
+  transition-delay:calc(var(--i) * .11s)}
+.js .contact.in h2 .w{opacity:1;transform:none;filter:none}
+.js .contact.in h2::after{width:min(420px,88%)}
+
+/* --- Kurve zeichnet sich, danach erscheinen Punkte und Werte --- */
+.js .ret-area{opacity:0;transition:opacity .8s var(--ease) .9s}
+.js .in .ret-area{opacity:1}
+.js .ret-dot,.js .ret-lab{opacity:0;transition:opacity .5s var(--ease);transition-delay:var(--d)}
+.js .in .ret-dot,.js .in .ret-lab{opacity:1}
+
+/* ============================================================
+   13. REVEAL
+   ============================================================ */
+.rv{transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.js .rv{opacity:0;transform:translateY(14px)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ============================================================
+   14. RESPONSIVE
+   ============================================================ */
+.gantt{--lbl:220px}
+
+/* --- grosse Desktops: Zeilen enger fuehren --- */
+
+
+/* --- kleine Desktops / Laptops --- */
+
+
+/* --- Tablet quer --- */
+
+
+/* --- Tablet hoch / Sidebar wird zur Kopfleiste --- */
+
+
+/* --- grosse Smartphones --- */
+
+
+/* --- Smartphones --- */
+
+
+/* --- sehr schmale Geraete --- */
+
+
+/* --- Touch: Screenshots ohne Hover trotzdem lesbar --- */
+
+
+
+
+
+/* ============================================================
+   15. HELLES THEME
+   ============================================================ */
+:root[data-theme="light"]{
+  --ink:#F4F6F9; --ink-2:#EAEEF4;
+  --panel:linear-gradient(158deg,rgba(255,255,255,.92),rgba(255,255,255,.72));
+  --panel-hi:linear-gradient(158deg,rgba(255,255,255,1),rgba(255,255,255,.86));
+  --line:rgba(16,32,52,.19); --line-soft:rgba(16,32,52,.10);
+  --text:#0E1723; --text-2:#41546B; --text-3:#6E8095;
+  --cyan:#0E8FA8; --amber:#C4611A; --violet:#5A5FCC; --green:#1E8A5A;
+
+  --t1:rgba(16,32,52,.014); --t2:rgba(16,32,52,.022); --t3:rgba(16,32,52,.035);
+  --t4:rgba(16,32,52,.045); --t5:rgba(16,32,52,.055); --t6:rgba(16,32,52,.05);
+  --t7:rgba(16,32,52,.07);  --t9:rgba(16,32,52,.09);  --t10:rgba(16,32,52,.10);
+  --t14:rgba(16,32,52,.14); --t17:rgba(16,32,52,.17); --t22:rgba(16,32,52,.22);
+  --t45:rgba(16,32,52,.45);
+  --veil:rgba(244,246,249,.82);
+  --shadow:0 1px 2px rgba(16,32,52,.05), 0 8px 24px rgba(16,32,52,.06);
+}
+:root[data-theme="light"] .bg::before{background:rgba(14,143,168,.13)}
+:root[data-theme="light"] .bg::after{background:rgba(196,97,26,.10)}
+:root[data-theme="light"] .grain{display:none}
+:root[data-theme="light"] .panel,
+:root[data-theme="light"] .statbar,
+:root[data-theme="light"] .statusbar{box-shadow:var(--shadow)}
+:root[data-theme="light"] .sidebar{background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.72))}
+:root[data-theme="light"] .ph-fallback b{background:linear-gradient(140deg,var(--cyan),#3AB3C9 60%,var(--amber));
+  -webkit-background-clip:text;background-clip:text}
+:root[data-theme="light"] .hero h1 em{background:linear-gradient(92deg,var(--cyan),#0F7C93 50%,var(--amber));
+  -webkit-background-clip:text;background-clip:text}
+/* Screenshots im hellen Theme nicht abdunkeln, sondern aufhellen */
+:root[data-theme="light"] .shot{background:linear-gradient(135deg,#DDE5EE,#EEF2F7 60%,#E4EDE6)}
+:root[data-theme="light"] .shot img{filter:brightness(1.02) contrast(.96) saturate(.55)}
+:root[data-theme="light"] .shot::after{background:linear-gradient(152deg,rgba(14,143,168,.34),rgba(90,130,160,.2) 52%,rgba(196,97,26,.28))}
+:root[data-theme="light"] .pcard:hover .shot img{filter:none}
+:root[data-theme="light"] .portrait{background:linear-gradient(150deg,#DDE5EE,#EEF2F7 55%,#F0E7DE)}
+:root[data-theme="light"] .portrait::before,
+:root[data-theme="light"] .shot::before{background:linear-gradient(180deg,rgba(10,20,32,0) 45%,rgba(10,20,32,.62))}
+:root[data-theme="light"] .tag{background:rgba(255,255,255,.86);color:#0E1723;border-color:rgba(16,32,52,.12)}
+:root[data-theme="light"] .fn-bar,
+:root[data-theme="light"] .meter,
+:root[data-theme="light"] .gt-track{background:rgba(16,32,52,.06)}
+:root[data-theme="light"] .crow--cta .ck{color:rgba(255,255,255,.6)}
+:root[data-theme="light"] .crow--cta .cv,
+:root[data-theme="light"] .crow--cta .cv i{color:#fff}
+:root[data-theme="light"] .crow--cta:hover{background:#000}
+:root[data-theme="light"] .btn--solid:hover{background:#000;color:#fff}
+:root[data-theme="light"] .gt-row--break .gt-track::before{border-top-color:rgba(16,32,52,.22)}
+:root[data-theme="light"] .gt-row--break .gt-bar{background:rgba(16,32,52,.45)}
+:root[data-theme="light"] .axis{fill:var(--text-3)}
+:root[data-theme="light"] .gridline{stroke:rgba(16,32,52,.12)}
+:root[data-theme="light"] .val{fill:var(--text)}
+:root[data-theme="light"] circle[fill="#05080C"]{fill:#F4F6F9}
+
+
+/* Theme- und Sprachumschalter */
+.switch{display:flex;align-items:stretch;height:var(--barh);border:1px solid var(--line);border-radius:9px;
+  background:var(--t3);overflow:hidden}
+.switch button,.switch a{appearance:none;border:0;background:none;cursor:pointer;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);padding:0 .85rem;line-height:1;display:flex;align-items:center;gap:.35rem;
+  border-left:1px solid var(--line-soft);transition:background var(--dur-fast) ease,color .2s}
+.switch>:first-child{border-left:0}
+.switch button:hover,.switch a:hover{background:var(--t5);color:var(--text)}
+.switch svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round}
+
+/* Stellensuche */
+.seeking{display:inline-flex;align-items:center;gap:.55rem;align-self:flex-start;
+  padding:.42rem .75rem;border-radius:8px;
+  border:1px solid rgba(90,209,230,.42);background:rgba(90,209,230,.09);
+  font-family:var(--mono);font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--cyan)}
+.seek{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.seek div{padding:15px 18px;border-left:1px solid var(--line-soft)}
+.seek div:nth-child(3n+1){border-left:0}
+.seek div:nth-child(n+4){border-top:1px solid var(--line-soft)}
+.seek dt{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-3)}
+.seek dd{margin:.4rem 0 0;font-size:.94rem;font-weight:500;line-height:1.35}
+
+
+.theme-moon{display:none}
+:root[data-theme="light"] .theme-moon{display:block}
+:root[data-theme="light"] .theme-sun{display:none}
+
+
+
+/* ============================================================
+   16. DRUCK / PDF
+   ============================================================ */
+
+
+@media (max-width:1400px){
+  .contact{gap:clamp(24px,3.5vw,56px)}
+}
+
+@media (max-width:1250px){
+  .c3{grid-column:span 6}.c4{grid-column:span 6}.c5{grid-column:span 12}
+  .c7{grid-column:span 12}.c8{grid-column:span 12}  .p-profile{grid-column:span 12}
+  .hero{min-height:auto}
+  .gantt{--lbl:180px}
+}
+
+@media (max-width:1080px){
+  :root{--gap:12px}
+  .contact{grid-template-columns:minmax(0,1fr) minmax(280px,360px);gap:36px}
+  .contact h2{font-size:clamp(1.8rem,4.4vw,2.6rem)}
+}
+
+@media (max-width:900px){.hero-art video{display:none}}
+
+@media (max-width:900px){
+  :root{--sb:0px}
+  .sidebar{position:sticky;top:0;z-index:60;width:auto;flex-direction:row;align-items:center;
+    gap:.4rem;border-right:0;border-bottom:1px solid var(--line);padding:9px 12px;
+    overflow-x:auto;scrollbar-width:none}
+  .sidebar::-webkit-scrollbar{display:none}
+  .sb-label,.sb-foot,.sb-link svg{display:none}
+  .brand{padding:0 .7rem 0 0}
+  .brand-txt span{display:none}
+  .sb-link{white-space:nowrap;padding:.45rem .7rem;font-size:.8rem}
+  .shell{margin-left:0}
+  .topbar{position:static;padding:12px 4px}
+  .c6{grid-column:span 12}
+  .contact{grid-template-columns:1fr;gap:28px}
+  .contact h2{max-width:16ch}
+  .note{max-width:none}
+  .gantt{--lbl:130px}
+  .hero-art{opacity:.18}
+  .topbar-tools{width:100%;justify-content:space-between;--barh:auto}
+  .topbar-tools>*{height:auto}
+  .statbar,.switch{height:auto}
+  .switch button,.switch a{padding:.55rem .8rem}
+  .topbar-tools .btn{padding:.6rem 1rem}
+  .statbar{flex:1;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .statbar::-webkit-scrollbar{display:none}
+  .sec{padding-top:20px}
+  .brand-mark{width:34px;height:34px}
+  .brand-txt strong{font-size:.92rem;line-height:1.08}
+  .brand-mark{width:36px;height:36px}
+  .seeking{white-space:normal}
+}
+
+@media (max-width:900px){
+  .seek{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .seek div{border-left:1px solid var(--line-soft);border-top:1px solid var(--line-soft)}
+  .seek div:nth-child(2n+1){border-left:0}
+  .seek div:nth-child(-n+2){border-top:0}
+}
+
+@media (max-width:700px){
+  .seeking{font-size:.56rem;letter-spacing:.08em;padding:.38rem .6rem}
+  .hero{padding:22px 18px!important}
+  .hero h1{font-size:clamp(1.6rem,6.6vw,2.1rem)}
+  .c3,.c4{grid-column:span 12}
+  .stat{padding:.35rem .6rem}
+  .stat dd em{display:none}
+  .cmp{height:130px}
+  .contact{padding:24px 20px}
+  .contact h2{font-size:clamp(1.7rem,7vw,2.2rem);max-width:none}
+  .contact p{font-size:.93rem}
+  .crow{padding:.7rem .85rem}
+  .cv{font-size:.83rem}
+  .note{padding:22px 20px}
+  .note-lead{font-size:1.08rem}
+  .note-cols p{font-size:.92rem}
+}
+
+@media (max-width:560px){
+  :root{--gap:10px}
+  .shell{padding:0 10px 28px}
+  .gantt{--lbl:0px;padding:14px}
+  .gt-today{display:none}
+  .gt-row{grid-template-columns:1fr;gap:.3rem;padding:.55rem 0}
+  .gt-row--break{padding:.35rem 0}
+  .gt-scale{margin-left:0}
+  .gt-lbl b{white-space:normal}
+  th,td{padding:.6rem 12px;font-size:.8rem}
+  .statusbar{flex-direction:column;gap:.45rem}
+  .legend{gap:.7rem 1rem}
+  .crow{flex-direction:column;align-items:flex-start;gap:.3rem}
+  .cv{text-align:left}
+  .sec h2{font-size:1.15rem}
+  .sec h2::before{height:.9em}
+  .cinfo{gap:6px}
+  .cv{max-width:100%;overflow-wrap:anywhere}
+  .sec p{font-size:.78rem}
+}
+
+@media (max-width:520px){
+  .seek{grid-template-columns:1fr}
+  .seek div{border-left:0;border-top:1px solid var(--line-soft)}
+  .seek div:first-child{border-top:0}
+}
+
+@media (max-width:380px){
+  .brand-txt strong{font-size:.92rem;line-height:1.08}
+  .brand-mark{width:36px;height:36px}
+  .seeking{white-space:normal}
+  .pb{padding:14px}
+  .ph{padding:11px 14px}
+  .ph .meta{display:none}
+}
+
+@media print{
+  :root{
+    --ink:#fff; --ink-2:#fff;
+    --panel:none; --panel-hi:none;
+    --line:#c4c9d0; --line-soft:#dfe3e8;
+    --text:#101418; --text-2:#333b45; --text-3:#5b6673;
+    --cyan:#0b6d80; --amber:#95440f; --violet:#3b3fa6; --green:#116b46;
+    --t1:transparent; --t2:transparent; --t3:transparent; --t4:transparent;
+    --t5:#eef0f3; --t6:transparent; --t7:#e8ebef; --t9:#dfe3e8;
+    --t10:#dfe3e8; --t14:#c4c9d0; --t17:#b8bec6; --t22:#aab1ba; --t45:#7b838d;
+    --blur:none; --shadow:none;
+  }
+  html,body{background:#fff!important;color:#101418!important}
+  .bg,.bg-grid,.sidebar,.topbar,.hero-art,.switch,.skip,.shot,.open,.led{display:none!important}
+  .shell{margin-left:0!important;padding:0!important}
+  .panel{background:#fff!important;border:1px solid #c4c9d0!important;
+    backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+    break-inside:avoid;page-break-inside:avoid;margin-bottom:8px}
+  .grid{display:block!important}
+  .hero{min-height:auto!important;padding:16px!important}
+  .hero h1{font-size:20pt!important}
+  .hero h1 em{color:#0b6d80!important;-webkit-text-fill-color:#0b6d80}
+  .sec{padding:18px 0 6px!important;break-after:avoid}
+  .portrait{aspect-ratio:3/2;max-width:200px}
+  .gt-row,.svc,.finding,tr{break-inside:avoid}
+  a{color:#101418!important;text-decoration:none}
+  .pcard[href]::after{content:" → " attr(href);display:block;margin-top:.4rem;
+    font-family:var(--mono);font-size:7pt;color:#5b6673;word-break:break-all}
+  .statusbar{border:0!important;padding-left:0!important}
+  @page{margin:14mm}
+}
+
+@media (hover:none){
+  .shot img{filter:brightness(.7) contrast(1.1) saturate(.6)}
+  .shot::after{opacity:.7}
+  .portrait img{filter:none}
+  .portrait::after{opacity:.15}
+}
+
+@media (hover:none){
+  :root[data-theme="light"] .shot img{filter:brightness(1.04) contrast(.95) saturate(.7)}
+}
+
+@media (prefers-reduced-motion:reduce){.hero-art video{display:none}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv,.rv{opacity:1;transform:none}
+  .js .rv .badge,.js .contact h2 .w{opacity:1!important;transform:none!important;filter:none!important}
+  .js .ret-area,.js .ret-dot,.js .ret-lab{opacity:1!important}
+  .draw{stroke-dasharray:none!important;stroke-dashoffset:0!important}
+  .js .contact h2::after{width:min(420px,88%)!important;transition:none}
+  .js .gt-bar,.gt-bar{transform:none;opacity:1}
+  .js .meter i{width:var(--w)}
+  .js .fn-bar i{width:var(--w)}
+  .js .cmp-bar{height:var(--h)}
+}
+</style>
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}else if(matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light')}}catch(e){}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Yauheni Vesialukha",
+"jobTitle":"Business Operations & Data Analyst","seeks":{"@type":"Demand","name":"Festanstellung als Business- / Data Analyst, Raum Zürich und Deutschschweiz, 80-100 %, Eintritt nach Absprache"},"email":"mailto:yauhenivesialukha@icloud.com",
+"telephone":"+41794460081","url":"https://yauhenivesialukha.netlify.app/","image":"https://yauhenivesialukha.netlify.app/og-image.png",
+"address":{"@type":"PostalAddress","addressLocality":"Wettingen","addressRegion":"AG","addressCountry":"CH"},
+"knowsLanguage":["de","en","ru","uk"],
+"knowsAbout":["SQL","Power BI","Tableau","SAP MM/CO","Python","BigQuery","Prozessoptimierung","KPI-Reporting"],
+"sameAs":["https://www.linkedin.com/in/yauheni-vesialukha-19162b239","https://github.com/Veseluha1984"]}
+</script>
+
+<!-- Google Analytics 4 — nur die Mess-ID unten eintragen, sonst nichts aendern -->
+<script>
+(function(){
+  var GA_ID = 'G-QSY7S2F7W3';   /* Mess-ID des Datenstroms */
+
+  // Bei lokalen Tests wird nichts gemessen
+  if(GA_ID.indexOf('XXXX') > -1) return;
+  var host = location.hostname;
+  if(location.protocol === 'file:' || host === 'localhost' || host === '127.0.0.1') return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ dataLayer.push(arguments); };
+
+  // Werbe-Cookies bleiben aus, nur Reichweitenmessung
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+
+  gtag('js', new Date());
+  gtag('config', GA_ID, { anonymize_ip: true });
+})();
+</script>
+<!-- Meta Pixel: hier einfuegen, falls benoetigt -->
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
+
+<div class="bg"></div><div class="bg-grid"></div>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+  <a href="#top" class="brand">
+    <span class="brand-mark">
+      <img class="logo-dark" width="120" height="120" fetchpriority="high" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_120/v1786371512/Logo-hell.png" alt="Yauheni Vesialukha">
+      <img class="logo-light" width="120" height="120" loading="lazy" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_120/v1786371512/Logo.png" alt="" aria-hidden="true">
+    </span>
+    <span class="brand-txt"><strong>Yauheni<br>Vesialukha</strong><span>Operations · Analytics</span></span>
+  </a>
+
+  <p class="sb-label">Views</p>
+  <a class="sb-link active" href="#top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.5h6.5v6H3.5zM14 3.5h6.5v4H14zM14 11.5h6.5v9H14zM3.5 13.5h6.5v7H3.5z"/></svg> Overview</a>
+  <a class="sb-link" href="#kompetenzen"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20.5V12M12 20.5V4M19 20.5v-5.5"/></svg> Capabilities</a>
+  <a class="sb-link" href="#projekte"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a1.5 1.5 0 0 1 1.5-1.5h3.6l1.8 2h8.1a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5H5a1.5 1.5 0 0 1-1.5-1.5z"/></svg> Projects</a>
+  <a class="sb-link" href="#analysen"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.5v17h17M7 15.5l3.8-4.4 3 2.4 4.7-6"/></svg> Analyses</a>
+  <a class="sb-link" href="#laufbahn"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h13M4 12h7.5M4 17.5h16"/></svg> Career</a>
+  <a class="sb-link" href="#qualifikation"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zM8.6 12.4 7.2 20.8 12 18l4.8 2.8-1.4-8.4"/></svg> Credentials</a>
+
+  <p class="sb-label">Channels</p>
+  <a class="sb-link sb-link--brand" href="https://www.linkedin.com/in/yauheni-vesialukha-19162b239" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45z"/></svg> LinkedIn <em>↗</em></a>
+  <a class="sb-link sb-link--brand" href="https://github.com/Veseluha1984" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg> GitHub <em>↗</em></a>
+
+  <div class="sb-foot">
+    <div class="status"><span class="led"></span>Open to conversations</div>
+    <a class="btn btn--solid" href="#kontakt">Get in touch</a>
+  </div>
+</aside>
+
+<!-- ================= SHELL ================= -->
+<main class="shell" id="top">
+
+  <div class="topbar">
+    <span class="crumb">Portfolio / <b>Overview</b></span>
+    <div class="topbar-tools">
+      <dl class="statbar">
+        <div class="stat"><dt>Operations &amp; business</dt><dd><span class="cnt num-lg">20+</span> <span class="unit">years</span> <em>since 2003</em></dd></div>
+        <div class="stat stat--accent"><dt>Analytics projects</dt><dd><span class="cnt num-lg">10</span> <em>documented</em></dd></div>
+        <div class="stat"><dt>Location</dt><dd class="type">Wettingen AG</dd></div>
+        <div class="stat stat--live"><dt>Status</dt><dd><span class="led"></span>Open to conversations</dd></div>
+      </dl>
+      <div class="switch">
+        <button type="button" data-theme-toggle aria-pressed="false"
+                data-label-light="Switch to light theme" data-label-dark="Switch to dark theme"
+                aria-label="Switch to light theme">
+          <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+        </button>
+        <a href="index.html" hreflang="de" title="Deutsche Fassung">DE</a>
+      </div>
+      <a class="btn" data-magnet href="Yauheni_Vesialukha_CV.pdf" target="_blank" rel="noopener noreferrer">Résumé ↓</a>
+    </div>
+  </div>
+
+  <!-- ============ ROW 1: HERO + PROFIL ============ -->
+  <div class="grid">
+    <section class="panel hero c8 rv">
+      <div class="hero-art">
+        <img src="https://res.cloudinary.com/mybcgqlk/video/upload/so_3,f_jpg,q_auto/v1786370871/Dashboard_displaying_revenue_growth_202608101607.jpg" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
+        <video class="hero-video" autoplay muted loop playsinline
+               preload="auto" poster="https://res.cloudinary.com/mybcgqlk/video/upload/so_3,f_jpg,q_auto/v1786370871/Dashboard_displaying_revenue_growth_202608101607.jpg"
+               aria-hidden="true" tabindex="-1">
+          <source src="https://res.cloudinary.com/mybcgqlk/video/upload/q_auto,f_webm/v1786370871/Dashboard_displaying_revenue_growth_202608101607.webm" type="video/webm">
+          <source src="https://res.cloudinary.com/mybcgqlk/video/upload/q_auto/v1786370871/Dashboard_displaying_revenue_growth_202608101607.mp4" type="video/mp4">
+          <source src="https://res.cloudinary.com/mybcgqlk/video/upload/v1786370871/Dashboard_displaying_revenue_growth_202608101607.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-in">
+        <span class="seeking"><span class="led"></span>Open to a new position · can start immediately</span>
+        <p class="eyebrow">Business Operations &amp; Data Analyst · Processes · ERP · BI</p>
+        <h1 class="display">Turning raw ERP data into <em>decisions you can measure.</em></h1>
+        <p>Trained in business administration, over 20 years accountable for processes, inventory and budgets, teams of up to 300 —
+           today with SQL, Power BI, Tableau and SAP MM/CO. I know both sides of a figure: how it comes about on the floor
+           and how it is analysed.</p>
+        <div class="hero-cta">
+          <a class="btn btn--solid" href="#projekte">Open projects</a>
+          <a class="btn" href="mailto:yauhenivesialukha@icloud.com">Send an email</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel c4 p-profile rv">
+      <div class="ph"><h2>Profile</h2><span class="meta">Key facts</span></div>
+      <div class="portrait">
+        <img src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371451/ChatGPT_Image_10_%D0%B0%D0%B2%D0%B3._2026_%D0%B3._16_17_08.png" width="1200" height="900" fetchpriority="high" decoding="async" alt="Portrait of Yauheni Vesialukha"
+             onerror="this.closest('.portrait').classList.add('is-empty')">
+        <div class="ph-fallback"><b>YV</b><span>Add portrait · img/portrait.jpg</span></div>
+        <div class="portrait-cap"><b>Yauheni Vesialukha</b><span>Business Operations &amp; Data Analyst</span></div>
+      </div>
+      <div class="pb">
+        <dl class="facts">
+          <div class="fact"><dt>Location</dt><dd>Wettingen AG, CH</dd></div>
+          <div class="fact"><dt>Degree</dt><dd>Economics &amp; Management<br><span class="mono" style="font-size:.68rem;color:var(--text-3)">recognised in CH</span></dd></div>
+          <div class="fact"><dt>Languages</dt><dd>German C1 level · English · RU/UA</dd></div>
+          <div class="fact"><dt>Leadership</dt><dd>teams of up to 300</dd></div>
+          <div class="fact"><dt>Availability</dt><dd class="up dd-live"><span class="led led--sm"></span>immediately</dd></div>
+        </dl>
+      </div>
+    </section>
+  </div>
+
+  <div class="grid">
+    <section class="panel c12 rv">
+      <div class="ph"><h3>Scope for my next position</h3><span class="meta">My criteria</span></div>
+      <dl class="seek">
+        <div><dt>Role</dt><dd>Business / Data Analyst · Operations Analyst · Process Manager</dd></div>
+        <div><dt>Type</dt><dd>Permanent position</dd></div>
+        <div><dt>Workload</dt><dd>80 – 100 %</dd></div>
+        <div><dt>Region</dt><dd>Zurich · Aargau · all of German-speaking Switzerland · hybrid or remote</dd></div>
+        <div><dt>Start</dt><dd class="up dd-live" style="justify-content:flex-start"><span class="led led--sm"></span>available immediately</dd></div>
+        <div><dt>Work permit</dt><dd>Protection status S<br>
+          <span class="mono" style="font-size:.68rem;font-weight:400;color:var(--text-3)">employment permitted in all cantons and sectors · notification by the employer</span></dd></div>
+      </dl>
+    </section>
+  </div>
+
+  <!-- ============ ROW 2: KPI ============ -->
+  <div class="sec">
+    <h2 id="wirkung">My results</h2><span class="rule"></span>
+    <p>Figures that changed under my ownership — the same measures I analyse today with SQL and BI.</p>
+  </div>
+
+  <div class="grid">
+    <section class="panel kpi c4 rv">
+      <div class="ph"><h3>Inventory accuracy</h3><span class="meta">Achieved</span></div>
+      <div class="pb">
+        <span class="num kpi-v up">+25 %</span>
+        <p class="kpi-l">after rebuilding stocktaking and processes in electronics retail</p>
+        <div class="meter"><i style="--w:78%;background:var(--cyan)"></i></div>
+        <span class="kpi-note">As regional manager · DIYESA 2019–22</span>
+      </div>
+    </section>
+    <section class="panel kpi c4 rv">
+      <div class="ph"><h3>Lead times</h3><span class="meta">Achieved</span></div>
+      <div class="pb">
+        <span class="num kpi-v down">−15 %</span>
+        <p class="kpi-l">through automation and ERP improvements</p>
+        <div class="meter"><i style="--w:58%;background:var(--amber)"></i></div>
+        <span class="kpi-note">As regional manager · DIYESA 2019–22</span>
+      </div>
+    </section>
+    <section class="panel kpi c4 rv">
+      <div class="ph"><h3>Productivity</h3><span class="meta">Achieved</span></div>
+      <div class="pb">
+        <span class="num kpi-v up">+20 %</span>
+        <p class="kpi-l">team leadership focused on standard compliance</p>
+        <div class="meter"><i style="--w:66%;background:var(--cyan)"></i></div>
+        <span class="kpi-note">As store manager · Retail 2012–14</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ KOMPETENZEN ============ -->
+  <div class="sec">
+    <h2 id="kompetenzen">Capabilities</h2><span class="rule"></span>
+    <p>What I own, and the tools I use to do it.</p>
+  </div>
+
+  <div class="grid">
+    <section class="panel c5 rv">
+      <div class="ph"><h3>Tasks I take on</h3><span class="meta">Focus areas</span></div>
+      <div class="pb pb--flush">
+        <div class="svc-list">
+          <div class="svc"><b>KPI and reporting systems</b><span>Defining metrics, building reports and automating the recurring preparation work.</span></div>
+          <div class="svc"><b>ERP and inventory analysis</b><span>SAP MM/CO, stock discrepancies, inventory accuracy, replenishment and warehouse metrics.</span></div>
+          <div class="svc"><b>Process and cost analysis</b><span>Lead times, bottlenecks and cost efficiency — from measurement through to the action taken.</span></div>
+          <div class="svc"><b>BI dashboards for decision-makers</b><span>Power BI, Tableau and Looker Studio: reports that management actually opens.</span></div>
+          <div class="svc"><b>Product &amp; marketing analytics</b><span>Funnels, retention, channel evaluation and A/B tests backed by statistics.</span></div>
+          <div class="svc"><b>Data modelling &amp; querying</b><span>SQL on PostgreSQL, BigQuery and Databricks — from raw dataset to a table you can rely on.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel c7 rv">
+      <div class="ph"><h3>Stack by purpose</h3><span class="meta">Tools</span></div>
+      <div class="pb pb--flush">
+        <table>
+          <thead><tr><th>Area</th><th>Tools</th><th>Usage</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Getting data</strong><small>Querying &amp; modelling</small></td>
+                <td>SQL · PostgreSQL · BigQuery · Databricks · Excel Power Query</td>
+                <td><span class="badge ok">daily</span></td></tr>
+            <tr><td><strong>Showing data</strong><small>BI &amp; visualisation</small></td>
+                <td>Power BI · Tableau · Looker Studio · Google Sheets</td>
+                <td><span class="badge ok">daily</span></td></tr>
+            <tr><td><strong>Testing data</strong><small>Product &amp; statistics</small></td>
+                <td>Python / Pandas · SciPy · GA4 · Amplitude · A/B-Tests</td>
+                <td><span class="badge">per project</span></td></tr>
+            <tr><td><strong>Applying data</strong><small>Operations &amp; ERP</small></td>
+                <td>SAP MM/CO · KPI reporting · stocktaking &amp; inventory · process optimisation</td>
+                <td><span class="badge ok">15 years hands-on</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ PROJEKTE ============ -->
+  <div class="sec">
+    <h2 id="projekte">Project register</h2><span class="rule"></span>
+    <p>Ten projects, each with its stack and what the analysis showed.</p>
+  </div>
+
+  <div class="grid">
+
+    <a class="panel pcard c4 rv" href="https://public.tableau.com/views/FunnelConversionTimeAnalysisTableau/FunnelConversionTimeAnalysis?:language=de-DE&amp;:origin=viz_share_link" target="_blank" rel="noopener noreferrer">
+      <div class="shot"><img loading="lazy" width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786381734/11.png" alt="Funnel Conversion Time Analysis in Tableau" onerror="this.closest('.shot').classList.add('is-empty')">
+        <div class="tagrow"><span class="tag tag--tool">Tableau</span><span class="tag">Funnel</span></div></div>
+      <div class="pb">
+        <h3>Funnel Conversion Time</h3>
+        <p>Conversion timing from sign-up through trial to payment — showing not only how many drop off, but when.</p>
+        <p class="finding"><span>Finding</span>The biggest delay sits between trial and first payment, not at sign-up.</p>
+        <span class="open">Open project <i>↗</i></span>
+      </div>
+    </a>
+
+    <a class="panel pcard c4 rv" href="https://app.amplitude.com/analytics/demo/dashboard/n72orz89" target="_blank" rel="noopener noreferrer">
+      <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371509/2.png" loading="lazy" alt="Customer Journey Path Analysis in Amplitude" onerror="this.closest('.shot').classList.add('is-empty')">
+        <div class="tagrow"><span class="tag tag--tool">Amplitude</span><span class="tag">User Paths</span></div></div>
+      <div class="pb">
+        <h3>Customer journey paths</h3>
+        <p>User paths through the product, compared across segments to locate the critical drop-off points.</p>
+        <p class="finding"><span>Finding</span>The critical step is email confirmation — that is where most users are lost.</p>
+        <span class="open">Open project <i>↗</i></span>
+      </div>
+    </a>
+
+    <a class="panel pcard c4 rv" href="https://app.amplitude.com/analytics/demo/dashboard/hhus5rgn" target="_blank" rel="noopener noreferrer">
+      <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371509/3.png" loading="lazy" alt="Retention- und Kohortenanalyse" onerror="this.closest('.shot').classList.add('is-empty')">
+        <div class="tagrow"><span class="tag tag--tool">Amplitude</span><span class="tag">Kohorten</span></div></div>
+      <div class="pb">
+        <h3>Retention &amp; cohorts</h3>
+        <p>Cohort analysis across several periods: how long users stay and which factors keep them.</p>
+        <p class="finding"><span>Finding</span>Almost all of the loss happens in the first week; after that the curve flattens.</p>
+        <span class="open">Open project <i>↗</i></span>
+      </div>
+    </a>
+
+    <a class="panel pcard c6 rv" href="https://public.tableau.com/views/SalesPerformanceDashboardTableau/Dashboard1?:language=de-DE&amp;:origin=viz_share_link" target="_blank" rel="noopener noreferrer">
+      <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371509/4.png" loading="lazy" alt="Sales Performance Dashboard in Tableau" onerror="this.closest('.shot').classList.add('is-empty')">
+        <div class="tagrow"><span class="tag tag--tool">Tableau</span><span class="tag">Sales KPI</span></div></div>
+      <div class="pb">
+        <h3>Sales Performance</h3>
+        <p>Revenue trend, target attainment and segments in one interactive dashboard for management.</p>
+        <p class="finding"><span>Finding</span>A handful of segments carry most of the revenue — visible without asking the reporting team.</p>
+        <span class="open">Open project <i>↗</i></span>
+      </div>
+    </a>
+
+    <a class="panel pcard c6 rv" href="https://console.cloud.google.com/bigquery" target="_blank" rel="noopener noreferrer">
+      <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371509/5.png" loading="lazy" alt="GA4 Conversion Analysis mit BigQuery" onerror="this.closest('.shot').classList.add('is-empty')">
+        <div class="tagrow"><span class="tag tag--tool">SQL</span><span class="tag tag--tool">BigQuery</span><span class="tag tag--tool">GA4</span></div></div>
+      <div class="pb">
+        <h3>GA4 Conversion Analysis</h3>
+        <p>SQL on raw GA4 data in BigQuery: conversion rates per marketing channel, made properly comparable.</p>
+        <p class="finding"><span>Finding</span>The strongest channel outperforms the weakest by a factor of four to five.</p>
+        <span class="open">Open project <i>↗</i></span>
+      </div>
+    </a>
+
+    <a class="panel pcard c6 rv" href="https://github.com/Veseluha1984/A_B_Test_Result" target="_blank" rel="noopener noreferrer">
+      <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371510/7.png" loading="lazy" alt="A/B-Test-Auswertung in Python" onerror="this.closest('.shot').classList.add('is-empty')">
+        <div class="tagrow"><span class="tag tag--tool">Python</span><span class="tag tag--tool">SciPy</span></div></div>
+      <div class="pb">
+        <h3>A/B test analysis</h3>
+        <p>Significance testing, confidence intervals and a clear recommendation instead of a table of results.</p>
+        <p class="finding"><span>Finding</span>Variant B wins significantly — the recommendation holds up statistically, not just visually.</p>
+        <span class="open">Open project <i>↗</i></span>
+      </div>
+    </a>
+
+    <a class="panel pcard c6 rv" href="https://github.com/Veseluha1984/saas-revenue-metrics-analysis" target="_blank" rel="noopener noreferrer">
+      <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371510/8.png" loading="lazy" alt="SaaS Revenue Metrics Dashboard" onerror="this.closest('.shot').classList.add('is-empty')">
+        <div class="tagrow"><span class="tag tag--tool">PostgreSQL</span><span class="tag tag--tool">Tableau</span></div></div>
+      <div class="pb">
+        <h3>SaaS Revenue Metrics</h3>
+        <p>End-to-end pipeline from data modelling to BI dashboard: MRR, ARPPU, churn, expansion and contraction.</p>
+        <p class="finding"><span>Finding</span>The youngest age group delivers the highest ARPPU, the middle one the highest churn.</p>
+        <span class="open">Open project <i>↗</i></span>
+      </div>
+    </a>
+
+    <a class="panel pcard c4 rv" href="https://github.com/Veseluha1984/traffic-source-performance-analysis" target="_blank" rel="noopener noreferrer">
+      <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371510/daschboard.png" loading="lazy" alt="Traffic Source Performance Dashboard" onerror="this.closest('.shot').classList.add('is-empty')">
+        <div class="tagrow"><span class="tag tag--tool">SQL</span><span class="tag tag--tool">Tableau</span></div></div>
+      <div class="pb">
+        <h3>Traffic Source Performance</h3>
+        <p>Channel scoring by engagement and activity, with a dynamic metric selector and a performance matrix.</p>
+        <p class="finding"><span>Finding</span>Only one channel clears the benchmark; the rest stay below it despite their reach.</p>
+        <span class="open">Open project <i>↗</i></span>
+      </div>
+    </a>
+
+    <a class="panel pcard c4 rv" href="https://github.com/Veseluha1984/swiss-electricity-consumption-trends" target="_blank" rel="noopener noreferrer">
+      <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371511/dashboard_index_1980_100.png" loading="lazy" alt="Swiss Electricity Consumption Trends" onerror="this.closest('.shot').classList.add('is-empty')">
+        <div class="tagrow"><span class="tag tag--tool">Databricks SQL</span><span class="tag">Zeitreihen</span></div></div>
+      <div class="pb">
+        <h3>Swiss Electricity Trends</h3>
+        <p>Swiss consumption in TWh, year-on-year change and indexed growth across four decades.</p>
+        <p class="finding"><span>Method</span>Only indexing to 1980 makes it comparable how growth shifted across four decades.</p>
+        <span class="open">Open project <i>↗</i></span>
+      </div>
+    </a>
+
+    <a class="panel pcard c4 rv" href="https://docs.google.com/spreadsheets/d/193z09kr-Y5Ffi2XhZ8XeqC2LEGyTrdKXE5ebZZOhSe0/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+      <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371509/6.png" loading="lazy" alt="Business Insights Dashboard in Google Sheets" onerror="this.closest('.shot').classList.add('is-empty')">
+        <div class="tagrow"><span class="tag tag--tool">Google Sheets</span><span class="tag">Pivot</span></div></div>
+      <div class="pb">
+        <h3>Business insights without a BI licence</h3>
+        <p>Formulas, pivot tables and charts for teams that need fast numbers and have no BI budget.</p>
+        <p class="finding"><span>Result</span>Reporting takes five minutes instead of several hours — with no BI licence.</p>
+        <span class="open">Open project <i>↗</i></span>
+      </div>
+    </a>
+  </div>
+
+  <!-- ============ ANALYSEN ============ -->
+  <div class="sec">
+    <h2 id="analysen">Analyses in detail</h2><span class="rule"></span>
+    <p>Three results from the projects above, rebuilt with the real figures — not sample data.</p>
+  </div>
+
+  <div class="grid">
+    <section class="panel c5 rv">
+      <div class="ph"><h3>Conversion funnel</h3><span class="meta">Tableau · n = 8'460</span></div>
+      <div class="pb">
+        <div class="funnel">
+          <div class="fn-row">
+            <span class="fn-name">Sign-ups</span><span class="fn-val">8'460</span>
+            <div class="fn-bar"><i style="--w:100%;background:linear-gradient(90deg,rgba(90,209,230,.85),rgba(90,209,230,.45))"></i></div>
+          </div>
+          <div class="fn-step">↓ 23 % start a trial</div>
+          <div class="fn-row">
+            <span class="fn-name">Trial started</span><span class="fn-val">1'948</span>
+            <div class="fn-bar"><i style="--w:23%;background:linear-gradient(90deg,rgba(142,147,240,.85),rgba(142,147,240,.45))"></i></div>
+          </div>
+          <div class="fn-step">↓ 30 % convert · 65 days avg.</div>
+          <div class="fn-row">
+            <span class="fn-name">Paying customers</span><span class="fn-val">577</span>
+            <div class="fn-bar"><i style="--w:6.8%;background:linear-gradient(90deg,rgba(240,135,60,.9),rgba(240,135,60,.5))"></i></div>
+          </div>
+        </div>
+        <p style="margin:0;font-size:.8rem;color:var(--text-3)">The biggest delay sits between trial and first payment — that is where the fix belongs.</p>
+      </div>
+    </section>
+
+    <section class="panel c4 rv">
+      <div class="ph"><h3>Retention curve</h3><span class="meta">Amplitude · cohorts</span></div>
+      <div class="pb">
+        <svg viewBox="0 0 320 160" role="img" aria-label="Retention: day 0 100 percent, day 7 42 percent, day 30 28 percent">
+          <line class="gridline" x1="34" y1="20" x2="310" y2="20"/>
+          <line class="gridline" x1="34" y1="60" x2="310" y2="60"/>
+          <line class="gridline" x1="34" y1="100" x2="310" y2="100"/>
+          <line class="gridline" x1="34" y1="130" x2="310" y2="130"/>
+          <text class="axis" x="4" y="24">100%</text>
+          <text class="axis" x="10" y="64">66%</text>
+          <text class="axis" x="10" y="104">33%</text>
+          <text class="axis" x="16" y="134">0%</text>
+          <defs>
+            <linearGradient id="gret" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#5AD1E6" stop-opacity=".38"/>
+              <stop offset="100%" stop-color="#5AD1E6" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path class="ret-area" d="M40 20 L170 82 L300 96 L300 130 L40 130 Z" fill="url(#gret)"/>
+          <path class="draw" d="M40 20 L170 82 L300 96" fill="none" stroke="#5AD1E6" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle class="ret-dot" style="--d:1.15s" cx="40" cy="20" r="4" fill="#05080C" stroke="#5AD1E6" stroke-width="2.2"/>
+          <circle class="ret-dot" style="--d:1.5s" cx="170" cy="82" r="4" fill="#05080C" stroke="#5AD1E6" stroke-width="2.2"/>
+          <circle class="ret-dot" style="--d:1.85s" cx="300" cy="96" r="4" fill="#05080C" stroke="#F0873C" stroke-width="2.2"/>
+          <text class="val ret-lab" style="--d:1.7s" x="150" y="72">42 %</text>
+          <text class="val ret-lab" style="--d:2s" x="262" y="86">28 %</text>
+          <text class="axis" x="34" y="148">DAY 0</text>
+          <text class="axis" x="152" y="148">DAY 7</text>
+          <text class="axis" x="278" y="148">DAY 30</text>
+        </svg>
+        <p style="margin:0;font-size:.8rem;color:var(--text-3)">Cohorts across several periods, each normalised against day 0.</p>
+      </div>
+    </section>
+
+    <section class="panel c3 rv">
+      <div class="ph"><h3>A/B test</h3><span class="meta">Python · SciPy</span></div>
+      <div class="pb">
+        <div class="cmp">
+          <div class="cmp-col">
+            <b>6.1 %</b>
+            <div class="cmp-bar" style="--h:62%;background:linear-gradient(180deg,rgba(110,138,166,.55),rgba(110,138,166,.14))"></div>
+            <span>Variant A</span>
+          </div>
+          <div class="cmp-col">
+            <b class="up">8.9 %</b>
+            <div class="cmp-bar" style="--h:90%;background:linear-gradient(180deg,var(--cyan),rgba(90,209,230,.25))"></div>
+            <span>Variant B</span>
+          </div>
+        </div>
+        <p style="margin:0;font-size:.8rem;color:var(--text-3)"><span class="mono" style="color:var(--green)">p &lt; 0.05</span> — the difference is statistically significant; recommendation: scale B.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ LAUFBAHN (GANTT) ============ -->
+  <div class="sec">
+    <h2 id="laufbahn">Career</h2><span class="rule"></span>
+    <p>Trained in business administration, accountable for processes and figures since 2003.</p>
+  </div>
+
+  <div class="grid">
+    <section class="panel c12 rv">
+      <div class="ph"><h3>Experience over time</h3><span class="meta">9 roles · 3 countries</span></div>
+      <div class="gantt">
+        <div class="gt-today" data-label="today"></div>
+        <div class="gt-scale">
+          <span class="gt-first" style="left:0%">2003</span>
+          <span style="left:16.67%">2007</span>
+          <span style="left:33.33%">2011</span>
+          <span style="left:50%">2015</span>
+          <span style="left:66.67%">2019</span>
+          <span style="left:83.33%">2023</span>
+        </div>
+
+        <div class="gt-row"><div class="gt-lbl"><b>Data analytics training</b><span>GoIT · Academia · CH</span></div>
+          <div class="gt-track"><div class="gt-bar" style="left:87.83%;width:10.5%;background:linear-gradient(90deg,var(--cyan),#a8ecf5);transition-delay:1.3s"></div></div></div>
+
+        <div class="gt-row"><div class="gt-lbl"><b>Solar systems installer</b><span>Schmocker AG · CH</span></div>
+          <div class="gt-track"><div class="gt-bar" style="left:84.04%;width:3.79%;background:var(--green);transition-delay:1.17s"></div></div></div>
+
+        <div class="gt-row"><div class="gt-lbl"><b>Operations associate</b><span>Obrist Transport + Recycling · CH</span></div>
+          <div class="gt-track"><div class="gt-bar" style="left:80.92%;width:3.12%;background:var(--amber);transition-delay:1.04s"></div></div></div>
+
+        <div class="gt-row gt-row--break"><div class="gt-lbl"><b>Relocation Ukraine → Switzerland</b><span>Interruption · 04–06.2022</span></div>
+          <div class="gt-track"><div class="gt-bar" style="left:80.21%;transition-delay:.91s"></div></div></div>
+
+        <div class="gt-row"><div class="gt-lbl"><b>Regional manager, risk &amp; processes</b><span>DIYESA GmbH · UA · 300 staff</span></div>
+          <div class="gt-track"><div class="gt-bar" style="left:70.12%;width:10.79%;background:linear-gradient(90deg,var(--amber),#f7a86a);transition-delay:.78s"></div></div></div>
+
+        <div class="gt-row"><div class="gt-lbl"><b>Security / deputy head</b><span>PrivatBank · UA · 50 staff</span></div>
+          <div class="gt-track"><div class="gt-bar" style="left:49.29%;width:20.83%;background:linear-gradient(90deg,var(--violet),#b0b4f7);transition-delay:.65s"></div></div></div>
+
+        <div class="gt-row"><div class="gt-lbl"><b>Store manager &amp; security manager</b><span>Kalinovskiy Markt · UA · 50 staff</span></div>
+          <div class="gt-track"><div class="gt-bar" style="left:40.96%;width:8.33%;background:var(--amber);transition-delay:.52s"></div></div></div>
+
+        <div class="gt-row gt-row--break"><div class="gt-lbl"><b>Relocation Belarus → Ukraine</b><span>Starting a family · 2012</span></div>
+          <div class="gt-track"><div class="gt-bar" style="left:40.42%;transition-delay:.39s"></div></div></div>
+
+        <div class="gt-row"><div class="gt-lbl"><b>District head</b><span>Grodno regional administration · BY · 150 staff</span></div>
+          <div class="gt-track"><div class="gt-bar" style="left:16.33%;width:24.62%;background:linear-gradient(90deg,var(--amber),#f7a86a);transition-delay:.26s"></div></div></div>
+
+        <div class="gt-row"><div class="gt-lbl"><b>Installation team lead</b><span>SandySekuritesSystems · BY</span></div>
+          <div class="gt-track"><div class="gt-bar" style="left:12.5%;width:3.83%;background:var(--violet);transition-delay:.13s"></div></div></div>
+
+        <div class="gt-row"><div class="gt-lbl"><b>IT teacher</b><span>Agricultural college · BY</span></div>
+          <div class="gt-track"><div class="gt-bar" style="left:1.75%;width:10.75%;background:var(--green);transition-delay:0s"></div></div></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--cyan)"></i>Analytics</span>
+        <span><i style="background:var(--amber)"></i>Operations &amp; retail</span>
+        <span><i style="background:var(--violet)"></i>Security &amp; banking</span>
+        <span><i style="background:var(--green)"></i>Engineering &amp; education</span>
+      </div>
+    </section>
+
+    <section class="panel c12 rv">
+      <div class="ph"><h3>One line, not a career change</h3><span class="meta">Analytical responsibility since 2001</span></div>
+      <div class="note">
+        <p class="note-lead">Data analysis is not a change of profession for me: I studied economics and business management, and today I apply that knowledge with different tools.</p>
+        <div class="note-cols">
+          <p>It began with a <strong>university degree in economics and business management</strong> — assessed by
+             swissuniversities as equivalent to a Swiss bachelor. As <strong>deputy head of cash-in-transit at a
+             major Ukrainian bank</strong> came route planning by effort and risk, branch metrics and systematic
+             incident analysis; in <strong>risk and process management at DIYESA</strong>, stock discrepancies,
+             inventory data and ERP analyses across 300 employees.</p>
+          <p>The questions have stayed the same: where does the deviation arise, which process creates it, what does it
+             cost per year. Only the tools are new — <strong>SQL, Tableau and Power BI</strong>.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ QUALIFIKATION ============ -->
+  <div class="sec">
+    <h2 id="qualifikation">Credentials</h2><span class="rule"></span>
+    <p>Degrees and certificates, in chronological order.</p>
+  </div>
+
+  <div class="grid">
+    <section class="panel c6 rv">
+      <div class="ph"><h3>Education</h3><span class="meta">4 entries</span></div>
+      <div class="pb pb--flush">
+        <table>
+          <tbody>
+            <tr><td><strong>University degree, economics and business management</strong><small>Grodno State Agrarian University, BY · Swiss ENIC 2024: Swiss bachelor level</small></td>
+                <td class="when">09.2005 – 10.2009</td><td><span class="badge ok">recognised in CH</span></td></tr>
+            <tr><td><strong>Agronomy</strong><small>Agricultural College, Novogrudok · SBFI 2025: practice in Switzerland confirmed</small></td>
+                <td class="when">2003 – 2007</td><td><span class="badge ok">recognised in CH</span></td></tr>
+            <tr><td><strong>Business administration (commerce)</strong><small>Agricultural College, Novogrudok</small></td>
+                <td class="when">2001 – 2003</td><td><span class="badge ok">with distinction</span></td></tr>
+            <tr><td><strong>Secondary School</strong><small>Novogrudok · focus on automotive mechanics</small></td>
+                <td class="when">1990 – 2001</td><td><span class="badge">completed</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel c6 rv">
+      <div class="ph"><h3>Certificates</h3><span class="meta">6 entries · latest 02.2026</span></div>
+      <div class="pb pb--flush">
+        <table>
+          <tbody>
+            <tr><td><strong>German C1 level</strong><small>Advanced course C1.1 completed · Academia Education AG</small></td><td class="when">02.2026</td><td><span class="badge ok">completed</span></td></tr>
+            <tr><td><strong>Data analyst programme</strong><small>GoIT, Online</small></td><td class="when">11.2025</td><td><span class="badge ok">current</span></td></tr>
+            <tr><td><strong>German B2</strong><small>Academia Education AG</small></td><td class="when">07.2025</td><td><span class="badge ok">certified</span></td></tr>
+            <tr><td><strong>CompTIA Security+ (preparation)</strong><small>Udemy</small></td><td class="when">02.2025</td><td><span class="badge">course</span></td></tr>
+            <tr><td><strong>Priority &amp; team management</strong><small>Udemy</small></td><td class="when">11.2024</td><td><span class="badge">course</span></td></tr>
+            <tr><td><strong>Web development</strong><small>Udemy</small></td><td class="when">12.2023</td><td><span class="badge">course</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ KONTAKT ============ -->
+  <div class="sec">
+    <h2>Contact</h2><span class="rule"></span>
+    <p>I reply within 24 hours.</p>
+  </div>
+
+  <div class="grid">
+    <section class="panel contact c12 rv" id="kontakt">
+      <div class="contact-txt">
+        <h2 class="display"><span class="w" style="--i:0">Need</span> <span class="w" style="--i:1">someone</span> <span class="w" style="--i:2">at</span> <span class="w" style="--i:3">the</span> <span class="w" style="--i:4">intersection</span><br><span class="w" style="--i:5">of</span> <span class="w" style="--i:6">operations</span> <span class="w" style="--i:7">and</span> <span class="w" style="--i:8">analytics?</span></h2>
+        <p>I am glad to talk about roles in business analysis, data analytics, operations or
+           process management. I reply within 24 hours.
+           Based in Wettingen AG — Zurich is about 30 minutes away. Available across
+           German-speaking Switzerland, hybrid or remote.</p>
+      </div>
+      <div class="cinfo">
+        <a class="crow" href="mailto:yauhenivesialukha@icloud.com">
+          <span class="ck">Email</span><span class="cv"><span class="scr">yauhenivesialukha@icloud.com</span></span></a>
+        <a class="crow" href="tel:+41794460081">
+          <span class="ck">Phone</span><span class="cv"><span class="scr">+41 79 446 00 81</span></span></a>
+        <a class="crow" href="https://www.linkedin.com/in/yauheni-vesialukha-19162b239" target="_blank" rel="noopener noreferrer">
+          <span class="ck">LinkedIn</span><span class="cv"><span class="scr">yauheni-vesialukha</span> <i>↗</i></span></a>
+        <a class="crow" href="https://github.com/Veseluha1984" target="_blank" rel="noopener noreferrer">
+          <span class="ck">GitHub</span><span class="cv"><span class="scr">Veseluha1984</span> <i>↗</i></span></a>
+        <a class="crow crow--cta" data-magnet href="Yauheni_Vesialukha_CV.pdf" target="_blank" rel="noopener noreferrer">
+          <span class="ck">Document</span><span class="cv">Résumé as PDF <i>↓</i></span></a>
+      </div>
+    </section>
+  </div>
+
+  <div class="statusbar">
+    <span>© 2026 Yauheni Vesialukha · Business Operations &amp; Data Analyst</span>
+    <span>Data source: own projects</span>
+    <span>Last updated: 08.2026</span>
+  </div>
+
+</main>
+
+<script>
+(function(){
+  // ---- Ereignisse an die Statistik melden (nur wenn GA4 aktiv ist) ----
+  function track(name, params){
+    if(typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if(!a) return;
+    var href = a.getAttribute('href') || '';
+    if(href.indexOf('.pdf') > -1){
+      track('cv_download', { position: a.closest('.topbar') ? 'topbar' : 'kontakt' });
+    } else if(href.indexOf('mailto:') === 0){
+      track('contact_click', { kanal: 'email' });
+    } else if(href.indexOf('tel:') === 0){
+      track('contact_click', { kanal: 'telefon' });
+    } else if(a.classList.contains('pcard')){
+      var t = a.querySelector('h3');
+      track('project_open', { projekt: t ? t.textContent.trim() : '' });
+    } else if(href === 'en.html' || href === 'index.html'){
+      track('language_switch', { ziel: href === 'en.html' ? 'en' : 'de' });
+    } else if(href.indexOf('linkedin.com') > -1){
+      track('outbound', { ziel: 'linkedin' });
+    } else if(href.indexOf('github.com') > -1){
+      track('outbound', { ziel: 'github' });
+    }
+  }, {passive:true});
+
+  // ---- Theme: gespeicherte Wahl, sonst Systemeinstellung ----
+  var root = document.documentElement;
+  function store(v){ try{ localStorage.setItem('theme', v); }catch(e){} }
+  function read(){ try{ return localStorage.getItem('theme'); }catch(e){ return null; } }
+
+  var saved = read();
+  if(saved === 'light' || saved === 'dark'){
+    root.setAttribute('data-theme', saved);
+  } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
+    root.setAttribute('data-theme', 'light');
+  }
+
+  var btn = document.querySelectorAll('[data-theme-toggle]');
+  var sync = function(){
+    var light = root.getAttribute('data-theme') === 'light';
+    btn.forEach(function(b){
+      b.setAttribute('aria-pressed', light ? 'true' : 'false');
+      b.setAttribute('aria-label', light ? b.dataset.labelDark : b.dataset.labelLight);
+    });
+  };
+  sync();
+  btn.forEach(function(b){
+    b.addEventListener('click', function(){
+      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      store(next);
+      sync();
+    });
+  });
+
+  // ---- Zahlen zaehlen beim Erscheinen hoch (nur einmal je Element) ----
+  function countUp(el, dur){
+    if(el.dataset.counted) return;
+    var raw = el.textContent.trim();
+    var m = raw.match(/^(\D*?)([\d]['\d]*(?:[.,]\d+)?)(.*)$/);
+    if(!m) return;
+    var pre = m[1], numStr = m[2], suf = m[3];
+    var sep = numStr.indexOf("'") >= 0 ? "'" : '';
+    var decMatch = numStr.match(/[.,](\d+)$/);
+    var decSign = decMatch ? numStr.charAt(numStr.length - decMatch[1].length - 1) : '';
+    var dec = decMatch ? decMatch[1].length : 0;
+    var target = parseFloat(numStr.replace(/'/g, '').replace(',', '.'));
+    if(!isFinite(target)) return;
+    el.dataset.counted = '1';
+
+    function fmt(v){
+      var s = v.toFixed(dec);
+      if(dec) s = s.replace('.', decSign);
+      if(sep){
+        var parts = s.split(decSign || '.');
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+        s = parts.join(decSign || '.');
+      }
+      return pre + s + suf;
+    }
+
+    var t0 = null;
+    dur = dur || 1150;
+    function step(t){
+      if(t0 === null) t0 = t;
+      var p = Math.min(1, (t - t0) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(target * eased);
+      if(p < 1) window.requestAnimationFrame(step);
+      else el.textContent = raw;
+    }
+    window.requestAnimationFrame(step);
+  }
+
+  function countReset(scope){
+    var nums = scope.querySelectorAll('.cnt, .kpi-v, .fn-val, .cmp-col b, text.val');
+    for(var i = 0; i < nums.length; i++) delete nums[i].dataset.counted;
+  }
+
+  function countIn(scope, dur, stagger){
+    var nums = scope.querySelectorAll('.cnt, .kpi-v, .fn-val, .cmp-col b, text.val');
+    var k = 0;
+    for(var i = 0; i < nums.length; i++){
+      var el = nums[i];
+      if(el.children && el.children.length) continue;  // nie in verschachtelte Auszeichnung schreiben
+      if(stagger){
+        (function(node, order){
+          setTimeout(function(){ countUp(node, dur); }, order * stagger);
+        })(el, k++);
+      } else {
+        countUp(el, dur);
+      }
+    }
+  }
+
+  // ---- Buchstabe fuer Buchstabe ----
+  function typeIn(el, speed, delay){
+    if(el.dataset.typing) return;
+    var full = el.dataset.text || el.textContent.trim();
+    el.dataset.text = full;
+    el.dataset.typing = '1';
+    el.textContent = '';
+    el.classList.add('is-typing');
+    setTimeout(function(){
+      var i = 0;
+      (function tick(){
+        if(!el.dataset.typing) return;
+        el.textContent = full.slice(0, ++i);
+        if(i < full.length) setTimeout(tick, speed);
+        else el.classList.remove('is-typing');
+      })();
+    }, delay || 0);
+  }
+  function typeReset(scope){
+    var t = scope.querySelectorAll('.type');
+    for(var i = 0; i < t.length; i++){
+      delete t[i].dataset.typing;
+      t[i].classList.remove('is-typing');
+      if(t[i].dataset.text) t[i].textContent = t[i].dataset.text;
+    }
+  }
+
+  var els = document.querySelectorAll('.rv');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!('IntersectionObserver' in window) || reduce){
+    els.forEach(function(el){el.classList.add('in')});
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e,i){
+        if(e.isIntersecting){
+          setTimeout(function(){ e.target.classList.add('in'); countIn(e.target); }, Math.min(i*95,380));
+        } else if(e.boundingClientRect.top > 0){
+          // nur zuruecksetzen, wenn das Element wieder UNTER dem Sichtfeld liegt —
+          // beim Hochscrollen bleibt alles oberhalb sichtbar
+          e.target.classList.remove('in');
+          countReset(e.target);
+        }
+      });
+    },{rootMargin:'0px 0px -18% 0px',threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }
+
+  // ---- Text-Scramble fuer die Kontaktzeilen ----
+  var GLYPHS = 'ABCDEFGHJKLMNPQRSTUVWXYZ0123456789@#%&$*<>/\\|+=-_';
+
+  function scrambleIn(el, delay){
+    if(el.dataset.done || el.dataset.busy) return;
+    var full = el.dataset.text || el.textContent;
+    el.dataset.text = full;
+    el.dataset.busy = '1';
+    el.style.minWidth = el.offsetWidth + 'px';
+    el.style.display  = 'inline-block';
+
+    var q = full.split('').map(function(c, i){
+      var start = Math.floor(i * 1.4 + Math.random() * 8);
+      return { c: c, start: start, end: start + 9 + Math.floor(Math.random() * 10) };
+    });
+    var frame = 0;
+
+    setTimeout(function(){
+      (function run(){
+        var out = '', done = 0;
+        for(var i = 0; i < q.length; i++){
+          var it = q[i];
+          if(it.c === ' '){ out += ' '; done++; continue; }
+          if(frame >= it.end){ out += it.c; done++; }
+          else if(frame >= it.start){ out += GLYPHS.charAt(Math.floor(Math.random() * GLYPHS.length)); }
+          else { out += '\u00a0'; }
+        }
+        el.textContent = out;
+        frame++;
+        if(done < q.length) window.requestAnimationFrame(run);
+        else {
+          el.textContent = full;
+          delete el.dataset.busy;
+          el.dataset.done = '1';
+          el.style.minWidth = '';
+        }
+      })();
+    }, delay || 0);
+  }
+
+  function scrambleReset(scope){
+    var s = scope.querySelectorAll('.scr');
+    for(var i = 0; i < s.length; i++){
+      delete s[i].dataset.done;
+      delete s[i].dataset.busy;
+      if(s[i].dataset.text) s[i].textContent = s[i].dataset.text;
+    }
+  }
+
+  var cinfo = document.querySelector('.cinfo');
+  if(cinfo && 'IntersectionObserver' in window && !reduce){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var s = e.target.querySelectorAll('.scr');
+          for(var i = 0; i < s.length; i++) scrambleIn(s[i], 120 + i * 180);
+        } else if(e.boundingClientRect.top > 0){
+          scrambleReset(e.target);
+        }
+      });
+    },{threshold:.25}).observe(cinfo);
+  }
+
+  // ---- Magnetische Knoepfe: folgen dem Zeiger im Nahbereich ----
+  var magnets = document.querySelectorAll('[data-magnet]');
+  var fine = !window.matchMedia || window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(magnets.length && !reduce && fine){
+    var RADIUS = 80;    // Wirkbereich ab Knopfrand
+    var FACTOR = 0.3;   // Anteil der Zeigerauslenkung
+    var LIMIT  = 16;    // maximale Verschiebung
+    var px = 0, py = 0, queued = false;
+
+    function apply(){
+      queued = false;
+      for(var i = 0; i < magnets.length; i++){
+        var el = magnets[i], r = el.getBoundingClientRect();
+        var ox = Math.max(r.left - px, 0, px - r.right);
+        var oy = Math.max(r.top - py, 0, py - r.bottom);
+        var edge = Math.sqrt(ox * ox + oy * oy);
+        if(edge < RADIUS){
+          var dx = (px - (r.left + r.width  / 2)) * FACTOR;
+          var dy = (py - (r.top  + r.height / 2)) * FACTOR;
+          var fade = 1 - edge / RADIUS;                       // am Rand sanft auslaufen
+          dx = Math.max(-LIMIT, Math.min(LIMIT, dx)) * fade;
+          dy = Math.max(-LIMIT, Math.min(LIMIT, dy)) * fade;
+          el.style.transform = 'translate(' + dx.toFixed(2) + 'px,' + dy.toFixed(2) + 'px)';
+        } else if(el.style.transform){
+          el.style.transform = '';
+        }
+      }
+    }
+
+    document.addEventListener('mousemove', function(ev){
+      px = ev.clientX; py = ev.clientY;
+      if(queued) return;
+      queued = true;
+      window.requestAnimationFrame(apply);
+    }, {passive:true});
+
+    document.addEventListener('mouseleave', function(){
+      for(var i = 0; i < magnets.length; i++) magnets[i].style.transform = '';
+    });
+    window.addEventListener('scroll', function(){
+      if(!queued){ queued = true; window.requestAnimationFrame(apply); }
+    }, {passive:true});
+  }
+
+  // ---- SVG-Pfade zeichnen sich beim Erscheinen ----
+  var paths = document.querySelectorAll('.draw');
+  if(paths.length && 'IntersectionObserver' in window && !reduce){
+    var setup = function(p){
+      var len = p.getTotalLength ? p.getTotalLength() : 0;
+      if(!len) return false;
+      p.dataset.len = len;
+      p.style.strokeDasharray  = len + ' ' + len;
+      p.style.strokeDashoffset = len;
+      return true;
+    };
+    var drawObs = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var p = e.target;
+        if(e.isIntersecting){
+          p.style.transition = 'stroke-dashoffset 2s ease-in-out';
+          p.style.strokeDashoffset = '0';
+        } else if(e.boundingClientRect.top > 0){
+          p.style.transition = 'none';
+          p.style.strokeDashoffset = p.dataset.len;
+        }
+      });
+    },{threshold:.35});
+    for(var d = 0; d < paths.length; d++){
+      if(setup(paths[d])) drawObs.observe(paths[d]);
+    }
+  }
+
+  // ---- Laufbahn: erst starten, wenn die obersten Zeilen im Blick sind ----
+  var gantt = document.querySelector('.gantt');
+  if(gantt && 'IntersectionObserver' in window && !reduce){
+    var panel = gantt.closest('.rv');
+    if(panel){
+      panel.classList.add('hold');
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting) panel.classList.remove('hold');
+          else if(e.boundingClientRect.top > 0) panel.classList.add('hold');
+        });
+      },{rootMargin:'0px 0px -45% 0px',threshold:0}).observe(gantt);
+    }
+  }
+
+  // Statleiste zaehlt ebenfalls bei jedem Eintritt
+  var bar = document.querySelector('.statbar');
+  if(bar && 'IntersectionObserver' in window && !reduce){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          countIn(e.target, 1700, 260);
+          var t = e.target.querySelectorAll('.type');
+          for(var n = 0; n < t.length; n++) typeIn(t[n], 85, 620);
+        } else {
+          countReset(e.target);
+          typeReset(e.target);
+        }
+      });
+    },{threshold:.2}).observe(bar);
+  }
+
+  // aktive Ansicht im Sidebar: der zuletzt passierte Abschnitt gewinnt
+  var links   = [].slice.call(document.querySelectorAll('.sb-link[href^="#"]'));
+  var targets = links.map(function(l){ return document.querySelector(l.getAttribute('href')); });
+
+  function markActive(){
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    // Umschaltpunkt bei 40 % der Fensterhoehe: der Abschnitt gilt als aktiv,
+    // sobald seine Ueberschrift ins obere Drittel geruckt ist
+    var line = Math.max(120, window.innerHeight * 0.4);
+    var idx = 0;
+    for(var i = 0; i < targets.length; i++){
+      if(targets[i] && targets[i].getBoundingClientRect().top <= line) idx = i;
+    }
+    if(y < 200) idx = 0;
+    for(var k = 0; k < links.length; k++){
+      links[k].classList.toggle('active', k === idx);
+    }
+  }
+
+  if(targets.length){
+    markActive();
+    var pending = false;
+    var onScroll = function(){
+      if(pending) return;
+      pending = true;
+      window.requestAnimationFrame(function(){ markActive(); pending = false; });
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll, {passive:true});
+  }
+})();
+</script>
+</body>
+</html>
