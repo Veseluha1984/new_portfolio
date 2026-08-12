@@ -90,7 +90,7 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;background:var(--ink);color:var(--text);
+  margin:0;overflow-x:hidden;background:var(--ink);color:var(--text);
   font-family:var(--body);font-size:16px;line-height:1.62;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
@@ -243,10 +243,17 @@ svg{display:block}
 /* ============================================================
    5. GRID + PANELS
    ============================================================ */
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-bottom:var(--gap)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-bottom:var(--gap);min-width:0}
+.grid>*{min-width:0}
 .c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}
 .c6{grid-column:span 6}.c7{grid-column:span 7}.c8{grid-column:span 8}
 .c9{grid-column:span 9}.c12{grid-column:span 12}
+/* Gleichmaessige Raster ohne Rundungsreste */
+.grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid--3>*{grid-column:auto}
+.kpi3{grid-column:auto}
+@media (max-width:1080px){.grid--3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.grid--3{grid-template-columns:minmax(0,1fr)}}
 
 .panel{
   display:flex;flex-direction:column;overflow:hidden;
@@ -265,7 +272,7 @@ svg{display:block}
 
 /* section heading row */
 .sec{display:flex;align-items:baseline;gap:1.15rem;
-  padding:clamp(30px,4.2vh,52px) 4px 8px;flex-wrap:wrap}
+  padding:44px 4px 14px;flex-wrap:wrap}
 .sec h2{order:1}
 .sec p{order:2}
 .sec .rule{order:3}
@@ -412,13 +419,14 @@ svg{display:block}
   font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-3)}
 .shot::before{content:"";position:absolute;inset:0;z-index:2;
   background:linear-gradient(180deg,rgba(5,8,12,.18) 40%,rgba(5,8,12,.8))}
-.tagrow{position:absolute;left:10px;bottom:10px;z-index:3;display:flex;gap:5px;flex-wrap:wrap}
+.tagrow{position:absolute;left:10px;bottom:10px;z-index:3;display:flex;gap:6px;flex-wrap:wrap}
 .tag--tool{display:inline-flex;align-items:center;gap:.4rem}
 .tag--tool::before{content:"";width:5px;height:5px;border-radius:50%;flex:none;
   background:var(--cyan);box-shadow:0 0 6px rgba(90,209,230,.8)}
-.tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.11em;text-transform:uppercase;
-  padding:.26rem .48rem;border-radius:5px;color:var(--text);
-  background:rgba(10,15,22,.62);border:1px solid var(--line);backdrop-filter:blur(8px)}
+.tag{display:inline-flex;align-items:center;height:24px;padding:0 .55rem;border-radius:7px;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text);
+  background:rgba(10,15,22,.62);border:1px solid var(--line);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap}
 .pcard{transition:transform var(--dur) var(--ease),border-color var(--dur) ease,background var(--dur) ease}
 
 .pcard:hover{transform:translateY(-3px);background:var(--panel-hi);border-color:var(--t22)}
@@ -429,8 +437,9 @@ svg{display:block}
   font-size:.9rem;line-height:1.5;color:var(--text-2)}
 .finding span{display:block;font-family:var(--mono);font-size:.57rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--text-3);margin-bottom:.35rem}
-.open{font-family:var(--body);font-size:.85rem;font-weight:600;letter-spacing:.005em;
-  color:var(--cyan);display:flex;align-items:center;gap:.4rem}
+.open{display:inline-flex;align-items:center;gap:.4rem;height:24px;
+  font-family:var(--body);font-size:.85rem;font-weight:600;letter-spacing:.005em;
+  color:var(--cyan)}
 .open i{font-style:normal;transition:transform var(--dur) var(--ease)}
 .pcard:hover .open i{transform:translate(3px,-3px)}
 
@@ -506,9 +515,9 @@ tbody tr:hover{background:var(--t3)}
 tbody tr:last-child td{border-bottom:0}
 td.when{font-family:var(--mono);font-size:.74rem;color:var(--text-3);white-space:nowrap}
 td small{display:block;color:var(--text-3);font-size:.76rem}
-.badge{display:inline-flex;align-items:center;gap:.35rem;padding:.22rem .5rem;border-radius:5px;
-  font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
-  border:1px solid var(--line);color:var(--text-2);background:var(--t3)}
+.badge{display:inline-flex;align-items:center;gap:.35rem;height:24px;padding:0 .55rem;border-radius:7px;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--line);color:var(--text-2);background:var(--t3);white-space:nowrap}
 .badge.ok{color:var(--green);border-color:rgba(99,199,147,.35)}
 
 /* ============================================================
@@ -1085,8 +1094,8 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
     <p>Figures that changed under my ownership — the same measures I analyse today with SQL and BI.</p>
   </div>
 
-  <div class="grid">
-    <section class="panel kpi c4 rv">
+  <div class="grid grid--3">
+    <section class="panel kpi kpi3 rv">
       <div class="ph"><h3>Inventory accuracy</h3><span class="meta">Achieved</span></div>
       <div class="pb">
         <span class="num kpi-v up">+25 %</span>
@@ -1095,7 +1104,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
         <span class="kpi-note">As regional manager · DIYESA 2019–22</span>
       </div>
     </section>
-    <section class="panel kpi c4 rv">
+    <section class="panel kpi kpi3 rv">
       <div class="ph"><h3>Lead times</h3><span class="meta">Achieved</span></div>
       <div class="pb">
         <span class="num kpi-v down">−15 %</span>
@@ -1104,7 +1113,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
         <span class="kpi-note">As regional manager · DIYESA 2019–22</span>
       </div>
     </section>
-    <section class="panel kpi c4 rv">
+    <section class="panel kpi kpi3 rv">
       <div class="ph"><h3>Productivity</h3><span class="meta">Achieved</span></div>
       <div class="pb">
         <span class="num kpi-v up">+20 %</span>
@@ -1166,7 +1175,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
     <p>Ten projects, each with its stack and what the analysis showed.</p>
   </div>
 
-  <div class="grid">
+  <div class="grid grid--3">
 
     <a class="panel pcard c4 rv" href="https://public.tableau.com/views/FunnelConversionTimeAnalysisTableau/FunnelConversionTimeAnalysis?:language=de-DE&amp;:origin=viz_share_link" target="_blank" rel="noopener noreferrer">
       <div class="shot"><img loading="lazy" width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786381734/11.png" alt="Funnel Conversion Time Analysis in Tableau" onerror="this.closest('.shot').classList.add('is-empty')">
@@ -1201,7 +1210,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
       </div>
     </a>
 
-    <a class="panel pcard c6 rv" href="https://public.tableau.com/views/SalesPerformanceDashboardTableau/Dashboard1?:language=de-DE&amp;:origin=viz_share_link" target="_blank" rel="noopener noreferrer">
+    <a class="panel pcard c4 rv" href="https://public.tableau.com/views/SalesPerformanceDashboardTableau/Dashboard1?:language=de-DE&amp;:origin=viz_share_link" target="_blank" rel="noopener noreferrer">
       <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371509/4.png" loading="lazy" alt="Sales Performance Dashboard in Tableau" onerror="this.closest('.shot').classList.add('is-empty')">
         <div class="tagrow"><span class="tag tag--tool">Tableau</span><span class="tag">Sales KPI</span></div></div>
       <div class="pb">
@@ -1212,7 +1221,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
       </div>
     </a>
 
-    <a class="panel pcard c6 rv" href="https://console.cloud.google.com/bigquery" target="_blank" rel="noopener noreferrer">
+    <a class="panel pcard c4 rv" href="https://console.cloud.google.com/bigquery" target="_blank" rel="noopener noreferrer">
       <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371509/5.png" loading="lazy" alt="GA4 Conversion Analysis mit BigQuery" onerror="this.closest('.shot').classList.add('is-empty')">
         <div class="tagrow"><span class="tag tag--tool">SQL</span><span class="tag tag--tool">BigQuery</span><span class="tag tag--tool">GA4</span></div></div>
       <div class="pb">
@@ -1223,7 +1232,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
       </div>
     </a>
 
-    <a class="panel pcard c6 rv" href="https://github.com/Veseluha1984/A_B_Test_Result" target="_blank" rel="noopener noreferrer">
+    <a class="panel pcard c4 rv" href="https://github.com/Veseluha1984/A_B_Test_Result" target="_blank" rel="noopener noreferrer">
       <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371510/7.png" loading="lazy" alt="A/B-Test-Auswertung in Python" onerror="this.closest('.shot').classList.add('is-empty')">
         <div class="tagrow"><span class="tag tag--tool">Python</span><span class="tag tag--tool">SciPy</span></div></div>
       <div class="pb">
@@ -1234,7 +1243,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
       </div>
     </a>
 
-    <a class="panel pcard c6 rv" href="https://github.com/Veseluha1984/saas-revenue-metrics-analysis" target="_blank" rel="noopener noreferrer">
+    <a class="panel pcard c4 rv" href="https://github.com/Veseluha1984/saas-revenue-metrics-analysis" target="_blank" rel="noopener noreferrer">
       <div class="shot"><img width="1200" height="800" decoding="async" src="https://res.cloudinary.com/mybcgqlk/image/upload/f_auto,q_auto,w_1200,e_sharpen:70/v1786371510/8.png" loading="lazy" alt="SaaS Revenue Metrics Dashboard" onerror="this.closest('.shot').classList.add('is-empty')">
         <div class="tagrow"><span class="tag tag--tool">PostgreSQL</span><span class="tag tag--tool">Tableau</span></div></div>
       <div class="pb">
