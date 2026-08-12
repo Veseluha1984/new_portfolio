@@ -253,7 +253,7 @@ svg{display:block}
 .c9{grid-column:span 9}.c12{grid-column:span 12}
 /* Gleichmaessige Raster ohne Rundungsreste */
 .grid--3,.grid--kpi{grid-template-columns:repeat(3,minmax(0,1fr))}
-.grid--3>*,.grid--kpi>*{grid-column:auto}
+.grid--3>*,.grid--kpi>*{grid-column:auto!important}
 .kpi3{grid-column:auto}
 /* Projektkarten brauchen Platz fuer das Bild — KPI-Kacheln nicht */
 @media (max-width:1080px){.grid--3{grid-template-columns:repeat(2,minmax(0,1fr))}}
