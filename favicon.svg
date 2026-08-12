@@ -1,7 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#5AD1E6"/><stop offset=".6" stop-color="#9FE7F2"/><stop offset="1" stop-color="#F0873C"/>
-</linearGradient></defs>
-<rect width="64" height="64" rx="14" fill="url(#g)"/>
-<text x="32" y="43" text-anchor="middle" font-family="Archivo, Helvetica, Arial, sans-serif"
-      font-size="28" font-weight="700" fill="#05080C">YV</text></svg>
+  <rect width="64" height="64" rx="13" fill="#05080C"/>
+  <g fill="#5AD1E6">
+    <rect x="11" y="36" width="7" height="17" rx="1.5"/>
+    <rect x="22" y="28" width="7" height="25" rx="1.5"/>
+    <rect x="33" y="31" width="7" height="22" rx="1.5"/>
+    <rect x="44" y="18" width="7" height="35" rx="1.5"/>
+  </g>
+  <path d="M12 30 L25 21 L36 25 L52 11" fill="none" stroke="#F0873C"
+        stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="52" cy="11" r="4" fill="#F0873C"/>
+</svg>
