@@ -19,6 +19,7 @@ Statische Seite ohne Build-Schritt: reines HTML, CSS und JavaScript.
 ├── favicon.svg
 ├── favicon-32.png
 ├── apple-touch-icon.png
+├── google0fc2e4ea567ff799.html   Bestaetigung Search Console
 ├── robots.txt
 ├── sitemap.xml
 ├── netlify.toml        Publish-Verzeichnis und Cache-Regeln
