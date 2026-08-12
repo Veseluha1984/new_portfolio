@@ -173,6 +173,7 @@ svg{display:block}
   border-radius:0 2px 2px 0;background:var(--cyan);transform:translateY(-50%);
   transition:height var(--dur) var(--ease);box-shadow:0 0 10px rgba(90,209,230,.55)}
 .sb-link.active::before{height:58%}
+.sb-cta{display:none}
 .sb-foot{margin-top:auto;display:flex;flex-direction:column;gap:9px}
 .led--sm{width:7px;height:7px}
 .dd-live{display:inline-flex;align-items:center;gap:.45rem;justify-content:flex-end}
@@ -218,10 +219,10 @@ svg{display:block}
 .topbar-tools .btn{display:inline-flex;align-items:center;padding:0 1.05rem}
 
 /* filter/stat bar — jede Zelle: Label oben, Wert unten */
-.statbar{display:flex;align-items:stretch;height:var(--barh);border:1px solid var(--line);border-radius:9px;
+.statbar{display:flex;align-items:stretch;flex:0 0 auto;height:var(--barh);border:1px solid var(--line);border-radius:9px;
   background:var(--t3);overflow:hidden}
 .stat{display:flex;flex-direction:column;gap:.14rem;justify-content:center;
-  padding:.38rem .85rem;border-left:1px solid var(--line-soft);white-space:nowrap}
+  padding:0 .85rem;border-left:1px solid var(--line-soft);white-space:nowrap;flex:0 0 auto}
 .stat:first-child{border-left:0}
 .stat dt{font-family:var(--mono);font-size:.55rem;letter-spacing:.15em;
   text-transform:uppercase;color:var(--text-3)}
@@ -731,6 +732,13 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
     overflow-x:auto;scrollbar-width:none}
   .sidebar::-webkit-scrollbar{display:none}
   .sb-label,.sb-foot,.sb-link svg{display:none}
+  /* Statt der abgeschnittenen Menuepunkte ein klarer Handlungsknopf */
+  .sb-link{display:none}
+  .sb-cta{display:inline-flex;align-items:center;margin-left:auto;flex:none;
+    height:36px;padding:0 1rem;border-radius:9px;
+    background:var(--text);color:var(--ink);font-size:.88rem;font-weight:600;
+    white-space:nowrap}
+  .sidebar{overflow:visible}
   .brand{display:flex;align-items:center;gap:.55rem;padding:0 .8rem 0 0;flex:none}
   .brand-txt strong .nl,.brand-txt strong br{display:none}
   .brand-txt strong{white-space:nowrap}
@@ -942,6 +950,7 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
     <span class="brand-txt"><strong>Yauheni <br class="nl">Vesialukha</strong><span>Operations · Analytics</span></span>
   </a>
 
+  <a class="sb-cta" href="#kontakt" aria-label="Get in touch">Contact</a>
   <p class="sb-label">Views</p>
   <a class="sb-link active" href="#top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.5h6.5v6H3.5zM14 3.5h6.5v4H14zM14 11.5h6.5v9H14zM3.5 13.5h6.5v7H3.5z"/></svg> Overview</a>
   <a class="sb-link" href="#kompetenzen"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20.5V12M12 20.5V4M19 20.5v-5.5"/></svg> Capabilities</a>
@@ -967,8 +976,8 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
     <span class="crumb">Portfolio / <b>Overview</b></span>
     <div class="topbar-tools">
       <dl class="statbar">
-        <div class="stat"><dt>Operations &amp; business</dt><dd><span class="cnt num-lg">20+</span> <span class="unit">years</span> <em>since 2003</em></dd></div>
-        <div class="stat stat--accent"><dt>Analytics projects</dt><dd><span class="cnt num-lg">10</span> <em>documented</em></dd></div>
+        <div class="stat"><dt>Experience</dt><dd><span class="cnt num-lg">20+</span> <span class="unit">years</span> <em>since 2003</em></dd></div>
+        <div class="stat stat--accent"><dt>Projects</dt><dd><span class="cnt num-lg">10</span> <em>documented</em></dd></div>
         <div class="stat"><dt>Location</dt><dd class="type">Wettingen AG</dd></div>
         <div class="stat stat--live"><dt>Status</dt><dd><span class="led"></span>Open to conversations</dd></div>
       </dl>
