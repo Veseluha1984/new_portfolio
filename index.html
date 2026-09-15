@@ -289,6 +289,14 @@ svg{display:block}
 .sec .rule{flex:1;height:1px;background:var(--line-soft);min-width:60px}
 .sec p{margin:0;font-size:.88rem;color:var(--text-3);max-width:52ch}
 
+/* Pull-Quote unter einer Sektionsueberschrift */
+.pq{order:3;margin:.55rem 0 0;padding:.05rem 0 .05rem 1rem;max-width:60ch;
+  border-left:2px solid var(--cyan)}
+.pq q{display:block;font-family:var(--display);font-weight:600;font-size:1.02rem;
+  line-height:1.3;color:var(--text);quotes:"\201C" "\201D"}
+.pq span{display:block;margin-top:.4rem;font-size:.84rem;line-height:1.5;color:var(--text-3)}
+@media (max-width:640px){.pq q{font-size:.92rem}.pq span{font-size:.78rem}}
+
 /* ============================================================
    6. HERO PANEL
    ============================================================ */
@@ -1309,6 +1317,9 @@ td small{display:block;color:var(--text-3);font-size:.76rem}
   <div class="sec">
     <h2 id="analysen">Analysen im Detail</h2><span class="rule"></span>
     <p>Drei Ergebnisse aus den Projekten oben, nachgebaut mit den echten Zahlen — keine Beispieldaten.</p>
+    <blockquote class="pq"><q>Content is king, context is queen.</q>
+      <span>Die Zahl muss stimmen — entscheidend ist, wer sie wann und in welchem Zusammenhang sieht.
+      Deshalb baue ich Berichte für den Empfänger, nicht für das Werkzeug.</span></blockquote>
   </div>
 
   <div class="grid">
